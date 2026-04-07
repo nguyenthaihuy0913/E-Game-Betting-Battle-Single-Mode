@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Betting Battle · Solo Practice Mode</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./src/styles/main.css" />
+</head>
+
+<body>
+  <canvas id="cv"></canvas>
+  <div class="grain"></div>
+  <div class="particles" id="pts"></div>
+
+  <div class="page">  
+
+    <div class="hero">
+      <div class="live-badge" style="background: rgba(16, 185, 129, 0.2); color: #059669; border-color: rgba(16, 185, 129, 0.4);">
+          <span class="ldot" style="background: #10B981;"></span>SOLO PRACTICE MODE
+      </div>
+      <div class="gtitle">
+        <span class="w-sky">Grammar</span> &amp; <span class="w-gold">Vocab</span><br>
+        Betting Battle
+      </div>
+      <div class="tsub">Summit 2 Edition · Train Your Brain · Outsmart the Game</div>
+      <div class="pills">
+        <span class="pill pb">⚡ 30 Questions</span>
+        <span class="pill pg">🪙 50 pts Start</span>
+        <span class="pill pm">✦ Auto-grading</span>
+      </div>
+    </div>
+
+    <div class="rstrip">
+      <span class="rl">Rounds</span>
+      <span class="rt r1">① Round 1: Multiple Choice</span>
+      <span class="rt r2">② Round 2: Gap Fill</span>
+    </div>
+
+    <div class="main-panel">
+      <div class="card cj" style="max-width: 450px; margin: 0 auto;">
+        <div class="cbar" style="background: linear-gradient(90deg, #10B981, #34D399, #10B981);"></div>
+        <div class="chead">
+          <div class="cion" style="background: #D1FAE5; color: #059669;">🐺</div>
+          <div>
+            <div class="ctitle">Practice Mode</div>
+            <div class="cdesc">Enter your name to start<br>the grammar challenge!</div>
+          </div>
+        </div>
+
+        <div class="field" style="margin-top: 15px;">
+          <div class="flabel">Your Name</div>
+          <div class="iwrap">
+            <span class="fico">👤</span>
+            <input class="fi" id="soloName" type="text" placeholder="e.g. Alex" autocomplete="off" />
+          </div>
+        </div>
+
+        <button class="btn pb" style="background: linear-gradient(135deg, #10B981, #059669); color: white; width: 100%; margin-top: 10px; padding: 16px; font-size: 18px;" onclick="startGrammarPractice()">
+          🚀 Start Practice
+        </button>
+
+        <div id="leaderboard" style="margin-top: 30px; border-top: 2px dashed #E2E8F0; padding-top: 20px;">
+            <h3 style="font-family: 'Fredoka One', cursive; color: #059669; font-size: 20px; text-align: center; margin-bottom: 15px;">🏆 Local Top 5</h3>
+            <div id="board-list" style="display: flex; flex-direction: column; gap: 10px;">
+                </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="foot"><strong>Assignment 2 · E-Game Design</strong> &nbsp;·&nbsp; Summit 2 Edition</div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="./src/scripts/sfx.js"></script>
+  <script>
+    const socket = io();
+
+    function startGrammarPractice() {
+        if(window.playClick) window.playClick();
+        
+        const playerName = document.getElementById('soloName').value.trim() || 'Anonymous';
+        const playerId = 'solo_' + Math.floor(Math.random() * 1000000);
+        
+        socket.emit('quick_practice', { playerName, playerId }, (res) => {
+           if(res && res.success) {
+               sessionStorage.setItem('roomId', res.roomId);
+               sessionStorage.setItem('playerId', playerId);
+               sessionStorage.setItem('playerName', playerName);
+               sessionStorage.setItem('isHost', 'false');
+               sessionStorage.setItem('team', '1'); 
+               
+               window.location.href = './src/pages/player/play-mcq.html';
+           } else {
+               if(typeof toast === 'function') {
+                   toast("Server connection failed! Please try again.");
+               } else {
+                   alert("Server connection failed! Please try again.");
+               }
+           }
+        });
+    }
+
+    // LOGIC RÚT DỮ LIỆU ĐIỂM SỐ TỪ MÁY VÀ HIỂN THỊ
+    function displayLeaderboard() {
+        const list = document.getElementById('board-list');
+        const board = JSON.parse(localStorage.getItem('betting_battle_scores') || "[]");
+        
+        if (board.length === 0) {
+            list.innerHTML = `<p style="text-align: center; color: #94A3B8; font-style: italic; font-weight: 600;">No records yet. Be the first!</p>`;
+            return;
+        }
+
+        list.innerHTML = board.map((item, idx) => {
+            let medal = idx === 0 ? '🥇' : idx === 1 ? '🥈' : idx === 2 ? '🥉' : '🎖️';
+            return `
+            <div style="display: flex; justify-content: space-between; align-items: center; background: #F8FAFC; padding: 12px 15px; border-radius: 12px; border: 1px solid #E2E8F0;">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <span style="font-size: 20px;">${medal}</span>
+                    <span style="font-weight: 800; color: #0F172A; font-size: 16px;">${item.name}</span>
+                </div>
+                <div style="text-align: right;">
+                    <div style="font-weight: 900; color: #EA580C; font-size: 18px;">${item.score} <span style="font-size: 12px; color: #64748B;">pts</span></div>
+                    <div style="font-size: 11px; color: #94A3B8; font-weight: 600;">${item.date}</div>
+                </div>
+            </div>
+            `;
+        }).join('');
+    }
+
+    // Gọi hàm hiển thị bảng điểm ngay khi trang vừa tải xong
+    document.addEventListener('DOMContentLoaded', displayLeaderboard);
+  </script>
+</body>
+</html>

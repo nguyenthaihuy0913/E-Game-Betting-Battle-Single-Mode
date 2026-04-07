@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Host Waiting Room · Betting Battle</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles/main.css" />
+  <link rel="stylesheet" href="./host-room.css" />
+</head>
+<body>
+  <canvas id="cv"></canvas>
+  <div class="grain"></div>
+  <div class="particles" id="pts"></div>
+
+  <div class="page">
+    <div class="hr-page">
+      
+      <!-- Header -->
+      <div class="hr-header">
+        <div class="hr-logo"><span class="w-sky">Betting</span> <span class="w-gold">Battle</span></div>
+        <div class="hr-status">
+          <div class="hr-status-dot"></div>
+          Waiting for players to join...
+        </div>
+        <button class="btn bj" style="width: auto; padding: 10px 18px; font-size: 15px;" onclick="leaveRoom()">🚪 Leave Room</button>
+      </div>
+
+      <!-- Main Layout Grid -->
+      <div class="hr-grid">
+        
+        <!-- Left Column: Share & Settings -->
+        <div class="hr-left">
+          
+          <!-- Share Card -->
+          <div class="card ch card-slim mb-20">
+            <div class="cbar"></div>
+            <div class="chead" style="margin-bottom: 20px;">
+              <div class="cion">🔗</div>
+              <div>
+                <div class="ctitle">Share Room</div>
+                <div class="cdesc">Players join using this code or QR</div>
+              </div>
+            </div>
+
+            <div class="hr-share-card">
+              <!-- QR Code (using a standard generator API for demo) -->
+              <div class="hr-qr">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=170x170&data=https://game.bettingbattle.com/join/XK7M2Q&color=0F2034" alt="QR Code" />
+              </div>
+
+              <!-- Room Code Box -->
+              <div class="hr-code-box">
+                <div class="hr-code-text" id="roomCodeTxt">...</div>
+                <button class="hr-copy-btn" onclick="copyToClipboard(document.getElementById('roomCodeTxt').innerText.replace(/\s+/g, ''), this)">Copy</button>
+              </div>
+
+              <!-- Link Box -->
+              <div class="hr-link-box">
+                <div class="hr-link-text" id="roomLinkTxt">...</div>
+                <button class="hr-copy-btn" onclick="copyToClipboard(document.getElementById('roomLinkTxt').innerText, this)">Copy Link</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Center Column: Participants List -->
+        <div class="card cj card-slim hr-center-col" style="height: 100%; display: flex; flex-direction: column;">
+          <div class="cbar"></div>
+          
+          <div class="hr-players-head">
+             <div class="chead">
+               <div class="cion">👥</div>
+               <div>
+                 <div class="ctitle">Participants</div>
+                 <div class="cdesc">People currently in the lobby</div>
+               </div>
+             </div>
+             <div class="hr-count">0 / 40</div>
+          </div>
+
+          <div class="hr-players-grid" id="playersGrid" style="flex: 1;">
+             <!-- Dynamically populated via Socket.io game_state -->
+          </div>
+
+          <button class="btn hr-launch-btn" onclick="launchGame()">
+            <span>🚀</span> Launch Game
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Leave Room Modal -->
+  <div class="hr-modal-overlay" id="leaveModal">
+    <div class="hr-modal">
+      <div class="hr-modal-icon">🚪</div>
+      <div class="hr-modal-title">Leave Room?</div>
+      <div class="hr-modal-desc">Are you sure you want to leave? This room will be closed.</div>
+      <div class="hr-modal-actions">
+        <button class="btn" style="background: #E2EDF5; color: var(--ink3); box-shadow: none;" onclick="closeLeaveModal()">Stay</button>
+        <button class="btn" style="background: var(--coral); box-shadow: 0 6px 22px rgba(251, 113, 133, 0.4);" onclick="confirmLeaveRoom()">Leave</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Global Toast -->
+  <div class="toast" id="toast"></div>
+  
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="../../scripts/socket-client.js"></script>
+  <script src="../../scripts/main.js"></script>
+  <script src="./host-room.js"></script>
+  <script>
+    // Initialize host UI with Room ID
+    setTimeout(() => {
+       const roomId = sessionStorage.getItem('roomId') || 'ERROR';
+       document.getElementById('roomCodeTxt').innerText = roomId.split('').join(' ');
+       const link = window.location.origin + '?room=' + roomId;
+       document.getElementById('roomLinkTxt').innerText = link;
+       
+       // Listen for game state updates
+       window.addEventListener('gameStateUpdate', (e) => {
+           const state = e.detail;
+           const grid = document.getElementById('playersGrid');
+           grid.innerHTML = '';
+           state.players.forEach(p => {
+               const el = document.createElement('div');
+               el.className = 'hr-player-chip';
+               el.innerHTML = `<div class="hr-avatar">🦁</div><div class="hr-name">${p.name}</div>`;
+               grid.appendChild(el);
+           });
+           document.querySelector('.hr-count').innerText = state.players.length + ' / 40';
+           
+           window.currentPlayers = state.players.length;
+           
+           if(state.state === 'TEAM_FORMATION') {
+                window.location.href='./host-dashboard.html';
+           }
+       });
+       
+       window.launchGame = function() {
+           if((window.currentPlayers || 0) < 2) {
+               toast('⚠️ The game requires at least 2 players to start!');
+               return;
+           }
+           if(window.playCreate) window.playCreate();
+           window.GameClient.hostAction('START_MATCHMAKING');
+       };
+    }, 500);
+  </script>
+</body>
+</html>

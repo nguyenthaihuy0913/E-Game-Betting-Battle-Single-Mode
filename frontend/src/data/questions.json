@@ -1,0 +1,760 @@
+{
+  "multiple_choice": [
+    {
+      "id": 1,
+      "question": "I don't mind _____ late to finish the community service project.",
+      "options": [
+        "A. him arrive",
+        "B. him arriving",
+        "C. his arriving",
+        "D. he arriving"
+      ],
+      "correct_answer": "B",
+      "correct_answer_text": "B. him arriving"
+    },
+    {
+      "id": 2,
+      "question": "She admitted _____ a mistake in the report.",
+      "options": [
+        "A. make",
+        "B. to make",
+        "C. making",
+        "D. made"
+      ],
+      "correct_answer": "C",
+      "correct_answer_text": "C. making"
+    },
+    {
+      "id": 3,
+      "question": "He denied _____ the blame for the accident.",
+      "options": [
+        "A. take",
+        "B. taking",
+        "C. to take",
+        "D. took"
+      ],
+      "correct_answer": "B",
+      "correct_answer_text": "B. taking"
+    },
+    {
+      "id": 4,
+      "question": "They promised _____ their responsibilities seriously.",
+      "options": [
+        "A. take",
+        "B. taking",
+        "C. to take",
+        "D. taken"
+      ],
+      "correct_answer": "C",
+      "correct_answer_text": "C. to take"
+    },
+    {
+      "id": 5,
+      "question": "Stop _____ excuses and take responsibility!",
+      "options": [
+        "A. make",
+        "B. making",
+        "C. to make",
+        "D. made"
+      ],
+      "correct_answer": "B",
+      "correct_answer_text": "B. making"
+    },
+    {
+      "id": 6,
+      "question": "He avoided _____ the truth.",
+      "options": [
+        "A. tell",
+        "B. telling",
+        "C. to tell",
+        "D. told"
+      ],
+      "correct_answer": "B",
+      "correct_answer_text": "B. telling"
+    },
+    {
+      "id": 7,
+      "question": "She decided _____ the truth instead of lying.",
+      "options": [
+        "A. tell",
+        "B. telling",
+        "C. to tell",
+        "D. told"
+      ],
+      "correct_answer": "C",
+      "correct_answer_text": "C. to tell"
+    },
+    {
+      "id": 8,
+      "question": "He kept _____ promises to his team.",
+      "options": [
+        "A. break",
+        "B. breaking",
+        "C. to break",
+        "D. broke"
+      ],
+      "correct_answer": "B",
+      "correct_answer_text": "B. breaking"
+    },
+    {
+      "id": 9,
+      "question": "She refused _____ responsibility for the error.",
+      "options": [
+        "A. take",
+        "B. taking",
+        "C. to take",
+        "D. took"
+      ],
+      "correct_answer": "C",
+      "correct_answer_text": "C. to take"
+    },
+    {
+      "id": 10,
+      "question": "I suggest _____ the issue honestly.",
+      "options": [
+        "A. discuss",
+        "B. discussing",
+        "C. to discuss",
+        "D. discussed"
+      ],
+      "correct_answer": "B",
+      "correct_answer_text": "B. discussing"
+    },
+
+    {
+      "id": 11,
+      "question": "He apologized for _____ late to the meeting.",
+      "options": [
+        "A. arrive",
+        "B. arriving",
+        "C. to arrive",
+        "D. arrived"
+      ],
+      "correct_answer": "B",
+      "correct_answer_text": "B. arriving"
+    },
+    {
+      "id": 12,
+      "question": "They agreed _____ the problem together.",
+      "options": [
+        "A. solve",
+        "B. solving",
+        "C. to solve",
+        "D. solved"
+      ],
+      "correct_answer": "C",
+      "correct_answer_text": "C. to solve"
+    },
+    {
+      "id": 13,
+      "question": "He risked _____ his reputation by lying.",
+      "options": [
+        "A. lose",
+        "B. losing",
+        "C. to lose",
+        "D. lost"
+      ],
+      "correct_answer": "B",
+      "correct_answer_text": "B. losing"
+    },
+    {
+      "id": 14,
+      "question": "She failed _____ her promise.",
+      "options": [
+        "A. keep",
+        "B. keeping",
+        "C. to keep",
+        "D. kept"
+      ],
+      "correct_answer": "C",
+      "correct_answer_text": "C. to keep"
+    },
+    {
+      "id": 15,
+      "question": "They considered _____ the truth to avoid trouble.",
+      "options": [
+        "A. tell",
+        "B. telling",
+        "C. to tell",
+        "D. told"
+      ],
+      "correct_answer": "B",
+      "correct_answer_text": "B. telling"
+    },
+    {
+      "id": 16,
+      "question": "He pretended _____ innocent.",
+      "options": [
+        "A. be",
+        "B. being",
+        "C. to be",
+        "D. been"
+      ],
+      "correct_answer": "C",
+      "correct_answer_text": "C. to be"
+    },
+    {
+      "id": 17,
+      "question": "She avoided _____ blamed for the mistake.",
+      "options": [
+        "A. be",
+        "B. being",
+        "C. to be",
+        "D. been"
+      ],
+      "correct_answer": "B",
+      "correct_answer_text": "B. being"
+    },
+    {
+      "id": 18,
+      "question": "He promised _____ the truth next time.",
+      "options": [
+        "A. tell",
+        "B. telling",
+        "C. to tell",
+        "D. told"
+      ],
+      "correct_answer": "C",
+      "correct_answer_text": "C. to tell"
+    },
+    {
+      "id": 19,
+      "question": "She admitted _____ the blame unfairly.",
+      "options": [
+        "A. shift",
+        "B. shifting",
+        "C. to shift",
+        "D. shifted"
+      ],
+      "correct_answer": "B",
+      "correct_answer_text": "B. shifting"
+    },
+    {
+      "id": 20,
+      "question": "He refused _____ an excuse.",
+      "options": [
+        "A. make",
+        "B. making",
+        "C. to make",
+        "D. made"
+      ],
+      "correct_answer": "C",
+      "correct_answer_text": "C. to make"
+    },
+
+    {
+      "id": 21,
+      "question": "They avoided _____ responsibility.",
+      "options": [
+        "A. take",
+        "B. taking",
+        "C. to take",
+        "D. took"
+      ],
+      "correct_answer": "B",
+      "correct_answer_text": "B. taking"
+    },
+    {
+      "id": 22,
+      "question": "He decided _____ the truth immediately.",
+      "options": [
+        "A. tell",
+        "B. telling",
+        "C. to tell",
+        "D. told"
+      ],
+      "correct_answer": "C",
+      "correct_answer_text": "C. to tell"
+    },
+    {
+      "id": 23,
+      "question": "She enjoys _____ others in need.",
+      "options": [
+        "A. help",
+        "B. helping",
+        "C. to help",
+        "D. helped"
+      ],
+      "correct_answer": "B",
+      "correct_answer_text": "B. helping"
+    },
+    {
+      "id": 24,
+      "question": "He forgot _____ his promise.",
+      "options": [
+        "A. keep",
+        "B. keeping",
+        "C. to keep",
+        "D. kept"
+      ],
+      "correct_answer": "C",
+      "correct_answer_text": "C. to keep"
+    },
+    {
+      "id": 25,
+      "question": "She regrets _____ a lie.",
+      "options": [
+        "A. tell",
+        "B. telling",
+        "C. to tell",
+        "D. told"
+      ],
+      "correct_answer": "B",
+      "correct_answer_text": "B. telling"
+    },
+    {
+      "id": 26,
+      "question": "He admitted _____ the mistake was his fault.",
+      "options": [
+        "A. be",
+        "B. being",
+        "C. to be",
+        "D. been"
+      ],
+      "correct_answer": "B",
+      "correct_answer_text": "B. being"
+    },
+    {
+      "id": 27,
+      "question": "She plans _____ her responsibilities better.",
+      "options": [
+        "A. manage",
+        "B. managing",
+        "C. to manage",
+        "D. managed"
+      ],
+      "correct_answer": "C",
+      "correct_answer_text": "C. to manage"
+    },
+    {
+      "id": 28,
+      "question": "They avoided _____ the truth to their boss.",
+      "options": [
+        "A. tell",
+        "B. telling",
+        "C. to tell",
+        "D. told"
+      ],
+      "correct_answer": "B",
+      "correct_answer_text": "B. telling"
+    },
+    {
+      "id": 29,
+      "question": "He agreed _____ responsibility for the failure.",
+      "options": [
+        "A. take",
+        "B. taking",
+        "C. to take",
+        "D. took"
+      ],
+      "correct_answer": "C",
+      "correct_answer_text": "C. to take"
+    },
+    {
+      "id": 30,
+      "question": "She denied _____ any involvement in the problem.",
+      "options": [
+        "A. have",
+        "B. having",
+        "C. to have",
+        "D. had"
+      ],
+      "correct_answer": "B",
+      "correct_answer_text": "B. having"
+    },
+    {
+      "id": 31,
+      "question": "He promised _____ more careful in the future.",
+      "options": [
+        "A. be",
+        "B. being",
+        "C. to be",
+        "D. been"
+      ],
+      "correct_answer": "C",
+      "correct_answer_text": "C. to be"
+    },
+    {
+      "id": 32,
+      "question": "She suggested _____ the issue calmly.",
+      "options": [
+        "A. discuss",
+        "B. discussing",
+        "C. to discuss",
+        "D. discussed"
+      ],
+      "correct_answer": "B",
+      "correct_answer_text": "B. discussing"
+    },
+    {
+      "id": 33,
+      "question": "He failed _____ his duties properly.",
+      "options": [
+        "A. perform",
+        "B. performing",
+        "C. to perform",
+        "D. performed"
+      ],
+      "correct_answer": "C",
+      "correct_answer_text": "C. to perform"
+    },
+    {
+      "id": 34,
+      "question": "They considered _____ an excuse.",
+      "options": [
+        "A. make",
+        "B. making",
+        "C. to make",
+        "D. made"
+      ],
+      "correct_answer": "B",
+      "correct_answer_text": "B. making"
+    },
+    {
+      "id": 35,
+      "question": "He avoided _____ criticized by others.",
+      "options": [
+        "A. be",
+        "B. being",
+        "C. to be",
+        "D. been"
+      ],
+      "correct_answer": "B",
+      "correct_answer_text": "B. being"
+    },
+    {
+      "id": 36,
+      "question": "She decided _____ the truth despite the risk.",
+      "options": [
+        "A. tell",
+        "B. telling",
+        "C. to tell",
+        "D. told"
+      ],
+      "correct_answer": "C",
+      "correct_answer_text": "C. to tell"
+    },
+    {
+      "id": 37,
+      "question": "He admitted _____ others unfairly.",
+      "options": [
+        "A. blame",
+        "B. blaming",
+        "C. to blame",
+        "D. blamed"
+      ],
+      "correct_answer": "B",
+      "correct_answer_text": "B. blaming"
+    },
+    {
+      "id": 38,
+      "question": "They refused _____ an apology.",
+      "options": [
+        "A. accept",
+        "B. accepting",
+        "C. to accept",
+        "D. accepted"
+      ],
+      "correct_answer": "C",
+      "correct_answer_text": "C. to accept"
+    },
+    {
+      "id": 39,
+      "question": "She enjoys _____ honest conversations.",
+      "options": [
+        "A. have",
+        "B. having",
+        "C. to have",
+        "D. had"
+      ],
+      "correct_answer": "B",
+      "correct_answer_text": "B. having"
+    },
+    {
+      "id": 40,
+      "question": "He forgot _____ his responsibilities.",
+      "options": [
+        "A. complete",
+        "B. completing",
+        "C. to complete",
+        "D. completed"
+      ],
+      "correct_answer": "C",
+      "correct_answer_text": "C. to complete"
+    },
+    {
+      "id": 41,
+      "question": "She regrets _____ the truth earlier.",
+      "options": [
+        "A. not tell",
+        "B. not telling",
+        "C. to not tell",
+        "D. not told"
+      ],
+      "correct_answer": "B",
+      "correct_answer_text": "B. not telling"
+    },
+    {
+      "id": 42,
+      "question": "They kept _____ excuses instead of acting.",
+      "options": [
+        "A. make",
+        "B. making",
+        "C. to make",
+        "D. made"
+      ],
+      "correct_answer": "B",
+      "correct_answer_text": "B. making"
+    },
+    {
+      "id": 43,
+      "question": "He risked _____ his job by lying.",
+      "options": [
+        "A. lose",
+        "B. losing",
+        "C. to lose",
+        "D. lost"
+      ],
+      "correct_answer": "B",
+      "correct_answer_text": "B. losing"
+    },
+    {
+      "id": 44,
+      "question": "She agreed _____ more responsible.",
+      "options": [
+        "A. become",
+        "B. becoming",
+        "C. to become",
+        "D. became"
+      ],
+      "correct_answer": "C",
+      "correct_answer_text": "C. to become"
+    },
+    {
+      "id": 45,
+      "question": "He pretended _____ nothing happened.",
+      "options": [
+        "A. know",
+        "B. knowing",
+        "C. to know",
+        "D. knew"
+      ],
+      "correct_answer": "C",
+      "correct_answer_text": "C. to know"
+    },
+    {
+      "id": 46,
+      "question": "They avoided _____ the consequences.",
+      "options": [
+        "A. face",
+        "B. facing",
+        "C. to face",
+        "D. faced"
+      ],
+      "correct_answer": "B",
+      "correct_answer_text": "B. facing"
+    },
+    {
+      "id": 47,
+      "question": "She promised _____ her mistake.",
+      "options": [
+        "A. fix",
+        "B. fixing",
+        "C. to fix",
+        "D. fixed"
+      ],
+      "correct_answer": "C",
+      "correct_answer_text": "C. to fix"
+    },
+    {
+      "id": 48,
+      "question": "He denied _____ the truth.",
+      "options": [
+        "A. hide",
+        "B. hiding",
+        "C. to hide",
+        "D. hid"
+      ],
+      "correct_answer": "B",
+      "correct_answer_text": "B. hiding"
+    },
+    {
+      "id": 49,
+      "question": "She suggested _____ responsibility immediately.",
+      "options": [
+        "A. take",
+        "B. taking",
+        "C. to take",
+        "D. took"
+      ],
+      "correct_answer": "B",
+      "correct_answer_text": "B. taking"
+    },
+    {
+      "id": 50,
+      "question": "He decided _____ the problem honestly.",
+      "options": [
+        "A. face",
+        "B. facing",
+        "C. to face",
+        "D. faced"
+      ],
+      "correct_answer": "C",
+      "correct_answer_text": "C. to face"
+    }
+  ],
+  "gap_fill": [
+    {
+      "id": 1,
+      "question": "Even when there was clear evidence, he refused to ____________________ (take / make / accept) responsibility for what had happened.",
+      "correct_answer": "take"
+    },
+    {
+      "id": 2,
+      "question": "After hours of questioning, she finally admitted ____________________ (lie / lying / to lie) about the incident.",
+      "correct_answer": "lying"
+    },
+    {
+      "id": 3,
+      "question": "Instead of fixing the problem, he kept ____________________ (make / making / to make) excuses to avoid punishment.",
+      "correct_answer": "making"
+    },
+    {
+      "id": 4,
+      "question": "You should consider ____________________ (tell / telling / to tell) the truth before things get worse.",
+      "correct_answer": "telling"
+    },
+    {
+      "id": 5,
+      "question": "She denied ____________________ (be / being / to be) involved, even though everyone suspected her.",
+      "correct_answer": "being"
+    },
+    {
+      "id": 6,
+      "question": "He promised ____________________ (fix / fixing / to fix) the mistake as soon as possible.",
+      "correct_answer": "to fix"
+    },
+    {
+      "id": 7,
+      "question": "They avoided ____________________ (talk / talking / to talk) about the issue during the meeting.",
+      "correct_answer": "talking"
+    },
+    {
+      "id": 8,
+      "question": "She regrets ____________________ (not tell / not telling / to not tell) the truth earlier.",
+      "correct_answer": "not telling"
+    },
+    {
+      "id": 9,
+      "question": "He failed ____________________ (complete / completing / to complete) the task on time despite multiple reminders.",
+      "correct_answer": "to complete"
+    },
+    {
+      "id": 10,
+      "question": "They suggested ____________________ (discuss / discussing / to discuss) the problem in a more constructive way.",
+      "correct_answer": "discussing"
+    },
+
+    {
+      "id": 11,
+      "question": "Instead of admitting his mistake, he tried to ____________________ (shift / shifting / to shift) the blame onto others.",
+      "correct_answer": "shift"
+    },
+    {
+      "id": 12,
+      "question": "She decided ____________________ (face / facing / to face) the consequences of her actions.",
+      "correct_answer": "to face"
+    },
+    {
+      "id": 13,
+      "question": "He risked ____________________ (lose / losing / to lose) his job by ignoring the rules.",
+      "correct_answer": "losing"
+    },
+    {
+      "id": 14,
+      "question": "They agreed ____________________ (take / taking / to take) full responsibility for the project failure.",
+      "correct_answer": "to take"
+    },
+    {
+      "id": 15,
+      "question": "She avoided ____________________ (answer / answering / to answer) the difficult questions.",
+      "correct_answer": "answering"
+    },
+    {
+      "id": 16,
+      "question": "He pretended ____________________ (know / knowing / to know) nothing about the situation.",
+      "correct_answer": "to know"
+    },
+    {
+      "id": 17,
+      "question": "You should stop ____________________ (blame / blaming / to blame) others for your own mistakes.",
+      "correct_answer": "blaming"
+    },
+    {
+      "id": 18,
+      "question": "She enjoys ____________________ (have / having / to have) honest and open conversations.",
+      "correct_answer": "having"
+    },
+    {
+      "id": 19,
+      "question": "He forgot ____________________ (send / sending / to send) the email, which caused a delay.",
+      "correct_answer": "to send"
+    },
+    {
+      "id": 20,
+      "question": "They considered ____________________ (report / reporting / to report) the issue to the manager.",
+      "correct_answer": "reporting"
+    },
+
+    {
+      "id": 21,
+      "question": "She apologized for ____________________ (be / being / to be) late to the important meeting.",
+      "correct_answer": "being"
+    },
+    {
+      "id": 22,
+      "question": "He refused ____________________ (accept / accepting / to accept) any criticism from his team.",
+      "correct_answer": "to accept"
+    },
+    {
+      "id": 23,
+      "question": "They kept ____________________ (delay / delaying / to delay) the decision without giving any clear reason.",
+      "correct_answer": "delaying"
+    },
+    {
+      "id": 24,
+      "question": "She admitted ____________________ (shift / shifting / to shift) the blame to avoid punishment.",
+      "correct_answer": "shifting"
+    },
+    {
+      "id": 25,
+      "question": "He planned ____________________ (improve / improving / to improve) his behavior after the incident.",
+      "correct_answer": "to improve"
+    },
+    {
+      "id": 26,
+      "question": "They denied ____________________ (break / breaking / to break) the rules, despite strong evidence.",
+      "correct_answer": "breaking"
+    },
+    {
+      "id": 27,
+      "question": "She promised ____________________ (be / being / to be) more responsible in the future.",
+      "correct_answer": "to be"
+    },
+    {
+      "id": 28,
+      "question": "He avoided ____________________ (face / facing / to face) the consequences of his actions.",
+      "correct_answer": "facing"
+    },
+    {
+      "id": 29,
+      "question": "You should try ____________________ (solve / solving / to solve) the problem instead of complaining.",
+      "correct_answer": "to solve"
+    },
+    {
+      "id": 30,
+      "question": "She finally agreed ____________________ (tell / telling / to tell) the truth after a long silence.",
+      "correct_answer": "to tell"
+    }
+  ]
+}

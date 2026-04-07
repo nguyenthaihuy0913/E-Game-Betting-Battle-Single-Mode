@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>MCQ Test Interface - Practice Mode</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="../../styles/main.css">
+  <link rel="stylesheet" href="./player-layout.css">
+  </head>
+
+<body>
+  <canvas id="cv"></canvas>
+  <div class="grain"></div>
+  <div class="particles" id="pt"></div>
+
+  <div class="page">
+    <div class="hero">
+      <h1 class="gtitle">Multiple Choice <span class="w-sky">Test</span></h1>
+      <p class="tsub">Previewing extracted questions from SUMMIT 1 U5</p>
+    </div>
+
+    <div class="test-container" id="mcq-container">
+      <div class="question-card" style="position: relative; overflow: hidden;">
+        
+        <div id="unified-timer-wrap" style="position: absolute; top: 0; left: 0; right: 0; height: 8px; background: rgba(0,0,0,0.05); z-index: 60; display: none;">
+           <div id="unified-timer-fill" style="height: 100%; width: 100%; background: linear-gradient(90deg, #FCD34D, #F59E0B); transition: width 1s linear;"></div>
+        </div>
+
+        <div class="betting-phase-overlay" id="bettingPhase">
+          <div style="font-size: 50px; margin-bottom: 10px;">💰</div>
+          <h2 style="font-family: 'Fredoka One', cursive; font-size: 28px; color: var(--ink); margin-bottom: 10px;">Place Your Bet!</h2>
+          <p style="color:var(--ink3); font-weight:700; margin-bottom:24px;">Lock in your bet before facing the question!</p>
+          
+          <div class="bet-widget">
+            <div class="bet-header">🪙 Bet Points</div>
+            <div class="bet-input-wrap">
+              <input type="number" class="bet-input" id="mcq-bet-input" placeholder="0" min="0">
+              <div class="bet-quick-btns">
+                <button class="bet-btn" onclick="document.getElementById('mcq-bet-input').value=10; if(window.playClick) window.playClick();">10</button>
+                <button class="bet-btn" onclick="document.getElementById('mcq-bet-input').value=30; if(window.playClick) window.playClick();">30</button>
+                <button class="bet-btn" onclick="document.getElementById('mcq-bet-input').value=parseInt(document.getElementById('score').innerText) || 50; if(window.playClick) window.playClick();">ALL</button>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn bh" style="width: 100%; max-width: 300px; padding: 18px; border-radius: 20px; font-size: 18px; box-shadow: 0 10px 30px rgba(16,185,129,0.3)" onclick="confirmBetAction()">🔒 Confirm Bet</button>
+        </div>
+        
+        <div class="q-badge" id="q-counter">
+          Q 1 / 30
+        </div>
+
+        <h2 class="q-text" id="q-text">Loading question...</h2>
+
+        <div class="options-grid" id="options-grid"></div>
+
+        <div class="feedback-msg" id="feedback-msg"></div>
+
+        <div class="test-nav">
+          <div class="score-hud">Score: <span id="score">0</span></div>
+          <button class="btn bh" id="next-btn" style="width: 140px; display: none;">Next &rarr;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="../../scripts/socket-client.js"></script>
+  <script src="../../scripts/sfx.js"></script>
+  <script src="../../scripts/main.js"></script>
+  <script src="../../scripts/anticheat.js"></script>
+  <script src="./play-mcq.js"></script>
+  
+  <script>
+     function confirmBetAction() {
+         const bet = parseInt(document.getElementById('mcq-bet-input').value) || 0;
+         if (window.GameClient) {
+             window.GameClient.submitBet(bet);
+             if(window.GameClient.isLeader) {
+                document.getElementById('bettingPhase').classList.add('hidden');
+                if(window.playSuccess) window.playSuccess();
+             } else {
+                 toast("Only the Team Leader can lock the bet!");
+             }
+         } else {
+             document.getElementById('bettingPhase').classList.add('hidden');
+             if(window.playSuccess) window.playSuccess();
+         }
+     }
+     
+     document.getElementById('options-grid').addEventListener('click', (e) => {
+         const btn = e.target.closest('.opt-btn');
+         if(btn && window.GameClient) {
+             const ansText = btn.innerText.replace(/^[A-D]\s*/, '').trim(); 
+             window.GameClient.submitAnswer(ansText);
+         }
+     });
+
+     window.addEventListener('gameStateUpdate', (e) => {
+         const state = e.detail;
+         
+         // Tự động nhảy sang trang Gap Fill khi hết Round 1
+         if (state.round === 2) {
+             window.location.href = './play-gap-fill.html';
+             return; 
+         }
+
+         if (window.loadQuestionFromState && state.currentQuestionIdx !== undefined) {
+             window.loadQuestionFromState(state.currentQuestionIdx);
+         }
+         
+         // ĐẾM SỐ CÂU CHUẨN 30 CÂU
+         const qCounter = document.getElementById('q-counter');
+         if (qCounter && state.progressIdx !== undefined) {
+             qCounter.innerText = `Q ${state.progressIdx + 1} / 30`; 
+         }
+
+         const teamInfo = state.teams.find(t => t.id === window.GameClient.team);
+         if (teamInfo) {
+             document.getElementById('score').innerText = teamInfo.score;
+         }
+
+         if(state.state === 'BETTING') {
+             document.getElementById('q-text').style.visibility = 'hidden';
+             document.getElementById('options-grid').style.visibility = 'hidden';
+
+             document.getElementById('bettingPhase').classList.remove('hidden');
+             const team = state.teams.find(t => t.id === window.GameClient.team);
+             if (team && team.hasBet) {
+                  document.getElementById('bettingPhase').classList.add('hidden');
+             }
+         } else if (state.state === 'QUESTION' || state.state === 'ROUND_RESULT') {
+             document.getElementById('q-text').style.visibility = 'visible';
+             document.getElementById('options-grid').style.visibility = 'visible';
+             document.getElementById('bettingPhase').classList.add('hidden');
+         }
+     });
+     
+     let questionTimerInt = null;
+     window.addEventListener('timerSync', (e) => {
+         const data = e.detail;
+         if (data.phase === 'BETTING' || data.phase === 'QUESTION') {
+             const maxTime = data.seconds || 30;
+             let currentSeconds = data.seconds;
+             
+             document.getElementById('unified-timer-wrap').style.display = 'block';
+             document.getElementById('unified-timer-fill').style.width = '100%';
+             document.getElementById('unified-timer-fill').style.background = data.phase === 'BETTING' ? 'linear-gradient(90deg, #FCD34D, #F59E0B)' : 'linear-gradient(90deg, #38BDF8, #34D399)';
+
+             if(questionTimerInt) clearInterval(questionTimerInt);
+             questionTimerInt = setInterval(() => {
+                 currentSeconds--;
+                 if(currentSeconds <= 5 && currentSeconds > 0) {
+                     if(window.playTick) window.playTick();
+                 }
+                 if(currentSeconds <= 0) {
+                     clearInterval(questionTimerInt);
+                     document.getElementById('unified-timer-wrap').style.display = 'none';
+                 } else {
+                     document.getElementById('unified-timer-fill').style.width = ((currentSeconds / maxTime) * 100) + '%';
+                 }
+             }, 1000);
+         } else {
+             if (questionTimerInt) clearInterval(questionTimerInt);
+             document.getElementById('unified-timer-wrap').style.display = 'none';
+         }
+     });
+  </script>
+</body>
+</html>
