@@ -73,7 +73,7 @@ Open your browser and navigate to:
 
 http://localhost:3000
 📁 Project Structure
-Plaintext
+```
 E-Game-Betting-Battle/
 ├── backend/
 │   ├── GameManager.js      # Manages auto-room creation & garbage collection
@@ -88,3 +88,4 @@ E-Game-Betting-Battle/
 │       └── styles/         # Global CSS
 ├── package.json
 └── server.js               # Express & Socket.io initialization
+```
