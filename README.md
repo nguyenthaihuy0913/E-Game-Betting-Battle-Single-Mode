@@ -71,7 +71,7 @@ pm2 start server.js --name "betting-battle-solo"
 4. Access the App
 Open your browser and navigate to:
 
-http://localhost:3000
+```http://localhost:3000```
 📁 Project Structure
 ```
 E-Game-Betting-Battle/
