@@ -8,11 +8,10 @@ class Room {
         this.state = 'LOBBY'; 
         
         this.round = 1; 
-        this.currentQuestionIdx = 0; // Bộ đếm tiến độ
+        this.currentQuestionIdx = 0; 
         this.timer = null;
         this.stateStartTime = null;
         
-        // --- ĐÃ CẬP NHẬT 30 CÂU MCQ VÀ 20 CÂU GAP FILL ---
         this.TOTAL_MCQ = 30;
         this.TOTAL_GAP = 20;
         this.TIME_BET = 15;
@@ -91,9 +90,11 @@ class Room {
                     const team = this.teams.get(player.team);
                     if (team && !team.hasBet) {
                         let rawBet = (payload && payload.bet !== undefined) ? payload.bet : payload;
-                        const betAmount = parseInt(rawBet, 10);
+                        // Chống bug nhập số âm hoặc lỗi
+                        let betAmount = parseInt(rawBet, 10);
+                        if (isNaN(betAmount) || betAmount < 0) betAmount = 0; 
                         
-                        team.currentBet = Math.min(isNaN(betAmount) ? 0 : betAmount, team.score); 
+                        team.currentBet = Math.min(betAmount, team.score); 
                         team.hasBet = true;
                         this.broadcastState();
                         this.checkAllBetsIn();
@@ -127,11 +128,6 @@ class Room {
                     reason: payload.reason,
                     time: Date.now()
                 });
-                break;
-            
-            case 'USE_ITEM': 
-                // Có thể xóa nhưng cứ để ngầm, client đã xóa file items.js nên không ai gọi lên được nữa
-                this.io.to(this.id).emit('item_used', { team: player.team, item: payload.item, target: payload.target });
                 break;
         }
     }
@@ -175,15 +171,26 @@ class Room {
     startRound() {
         this.teams.forEach(t => {
             t.hasAnswered = false; t.timeTaken = 0; t.lastAnswer = null; t.hasBet = false; t.currentBet = 0;
+            
+            // --- FIX TẠI ĐÂY: NẾU ĐIỂM VỀ 0 -> CẤM CƯỢC, VÀO THẲNG GAME ---
+            if (this.mode === 'SOLO' && t.score <= 0) {
+                t.hasBet = true; // Auto-skip vòng cược
+                t.currentBet = 0;
+            }
         });
+        
         this.state = 'BETTING';
         this.broadcastState();
+        
         this.startTimer(this.TIME_BET, () => {
             this.teams.forEach(t => {
                 if(!t.hasBet) { t.currentBet = t.score; t.hasBet = true; }
             });
             this.startQuestion();
         });
+
+        // Nếu tất cả đã cược (hoặc bị cấm cược), nhảy sang câu hỏi lập tức
+        this.checkAllBetsIn();
     }
 
     checkAllBetsIn() {
@@ -227,18 +234,44 @@ class Room {
 
         const activeTeams = Array.from(this.teams.values()).filter(t => t.members.length > 0);
         
-        const answeringTeams = activeTeams.filter(t => {
-            if (!t.hasAnswered || !t.lastAnswer) return false;
-            const submitted = t.lastAnswer.trim().toLowerCase();
-            return submitted === correctAnswerText || submitted === "mock_correct";
+        // --- FIX TẠI ĐÂY: PHÂN CHIA ĐỘI ĐÚNG VÀ SAI ĐỂ CỘNG/TRỪ ĐIỂM ---
+        const correctTeams = [];
+        const incorrectTeams = [];
+
+        activeTeams.forEach(t => {
+            if (!t.hasAnswered || !t.lastAnswer) {
+                incorrectTeams.push(t); // Không trả lời xem như Sai
+            } else {
+                const submitted = t.lastAnswer.trim().toLowerCase();
+                if (submitted === correctAnswerText || submitted === "mock_correct") {
+                    correctTeams.push(t);
+                } else {
+                    incorrectTeams.push(t);
+                }
+            }
         });
         
-        answeringTeams.sort((a,b) => a.timeTaken - b.timeTaken);
-
-        answeringTeams.forEach((t, idx) => {
+        // XỬ LÝ NHÓM TRẢ LỜI ĐÚNG
+        correctTeams.sort((a,b) => a.timeTaken - b.timeTaken);
+        correctTeams.forEach((t, idx) => {
             const multi = multipliers[Math.min(idx, multipliers.length - 1)];
-            const bonus = Math.floor(t.currentBet * multi);
-            t.score += bonus; 
+            
+            if (this.mode === 'SOLO' && t.score <= 0) {
+                // Trả lời đúng trong lúc cạn tiền -> Cấp vốn 36 điểm
+                t.score += 36;
+            } else {
+                // Bình thường -> Ăn tiền cược nhân hệ số
+                const bonus = Math.floor(t.currentBet * multi);
+                t.score += bonus; 
+            }
+        });
+
+        // XỬ LÝ NHÓM TRẢ LỜI SAI (Chỉ trừ điểm ở SOLO Mode)
+        incorrectTeams.forEach(t => {
+            if (this.mode === 'SOLO') {
+                t.score -= t.currentBet;
+                if (t.score < 0) t.score = 0; // Chạm đáy thì dừng lại ở 0
+            }
         });
 
         this.broadcastState();
