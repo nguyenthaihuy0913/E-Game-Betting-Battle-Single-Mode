@@ -275,7 +275,7 @@ class Room {
         });
 
         this.broadcastState();
-        this.startTimer(5, () => this.nextQuestion()); 
+        this.startTimer(2, () => this.nextQuestion()); 
     }
 
     nextQuestion() {
