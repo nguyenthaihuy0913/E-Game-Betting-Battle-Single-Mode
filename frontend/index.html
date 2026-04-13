@@ -10,7 +10,7 @@
   
   <style>
     body {
-        /* ĐƯỜNG DẪN ẢNH NỀN CỦA BẠN: Sửa lại tên file ảnh cho đúng (vd: bg.jpg) */
+        /* ĐƯỜNG DẪN ẢNH NỀN CỦA BẠN */
         background-image: url('./src/assets/fpt.png'); 
         background-size: cover;
         background-position: center;
@@ -25,14 +25,14 @@
         content: "";
         position: fixed;
         top: 0; left: 0; right: 0; bottom: 0;
-        background: rgba(0, 0, 0, 0.4); /* Tăng giảm 0.4 để chỉnh độ tối của màng phủ */
+        background: rgba(0, 0, 0, 0.4); 
         z-index: -1;
     }
 
     /* Hiệu ứng Glassmorphism (Kính mờ) cho Bảng điều khiển và Hero text */
     .card.cj, .hero {
-        background: rgba(255, 255, 255, 0.9) !important; /* Màu trắng hơi trong suốt */
-        backdrop-filter: blur(12px); /* Làm mờ ảnh nền phía sau thẻ */
+        background: rgba(255, 255, 255, 0.9) !important; 
+        backdrop-filter: blur(12px); 
         -webkit-backdrop-filter: blur(12px);
         border: 1px solid rgba(255, 255, 255, 0.5);
         box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
@@ -51,7 +51,7 @@
     }
     
     .rstrip {
-        display: none; /* Ẩn dải chữ bên phải để giao diện rộng và khoe được ảnh nền */
+        display: none; 
     }
   </style>
 </head>
@@ -99,7 +99,7 @@
         </button>
 
         <div id="leaderboard" style="margin-top: 30px; border-top: 2px dashed #E2E8F0; padding-top: 20px;">
-            <h3 style="font-family: 'Fredoka One', cursive; color: #059669; font-size: 20px; text-align: center; margin-bottom: 15px;">🏆 Local Top 5</h3>
+            <h3 style="font-family: 'Fredoka One', cursive; color: #059669; font-size: 20px; text-align: center; margin-bottom: 15px;">🌍 Global Top 5</h3>
             <div id="board-list" style="display: flex; flex-direction: column; gap: 10px;">
                 </div>
         </div>
@@ -142,11 +142,11 @@
         });
     }
 
-    function displayLeaderboard() {
+    // LOGIC RÚT DỮ LIỆU BẢNG XẾP HẠNG GLOBAL TỪ SERVER
+    function renderBoard(board) {
         const list = document.getElementById('board-list');
-        const board = JSON.parse(localStorage.getItem('betting_battle_scores') || "[]");
         
-        if (board.length === 0) {
+        if (!board || board.length === 0) {
             list.innerHTML = `<p style="text-align: center; color: #94A3B8; font-style: italic; font-weight: 600;">No records yet. Be the first!</p>`;
             return;
         }
@@ -168,7 +168,15 @@
         }).join('');
     }
 
-    document.addEventListener('DOMContentLoaded', displayLeaderboard);
+    // 1. Lấy bảng điểm từ Server ngay khi vừa tải trang
+    socket.emit('get_leaderboard', (board) => {
+        renderBoard(board);
+    });
+
+    // 2. Lắng nghe nếu có người khác vừa chơi xong và phá kỷ lục -> Cập nhật bảng ngay lập tức
+    socket.on('leaderboard_updated', (board) => {
+        renderBoard(board);
+    });
   </script>
 </body>
 </html>

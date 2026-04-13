@@ -93,18 +93,16 @@
          }
      }
      
-     // FIX BUG 2: ĐÓNG BĂNG GIAO DIỆN VÀ HIỆN CHỮ "ĐANG CHẤM" LẬP TỨC
      const origSubmit = window.checkGapFill;
      window.checkGapFill = function() {
          try { if (origSubmit) origSubmit(); } catch(e) { console.error(e); }
          
          if (window.GameClient) {
              const ansText = document.getElementById('gf-input').value.trim();
-             if (!ansText) return; // Chặn không cho nộp chuỗi rỗng
+             if (!ansText) return; 
              
              window.GameClient.submitAnswer(ansText);
              
-             // Khoá ngay lập tức để người chơi biết hệ thống đã nhận lệnh
              document.getElementById('gf-input').disabled = true;
              document.getElementById('submit-btn').disabled = true;
              document.getElementById('submit-btn').innerText = "⏳ Đang chấm...";
@@ -117,16 +115,14 @@
         }
      });
 
+     // FIX LỚN TẠI ĐÂY: Bắn điểm lên Server thay vì lưu LocalStorage
      function saveHighScore() {
          const name = sessionStorage.getItem('playerName') || "Anonymous";
          const score = parseInt(document.getElementById('score').innerText) || 0;
          
-         let board = JSON.parse(localStorage.getItem('betting_battle_scores') || "[]");
-         board.push({ name: name, score: score, date: new Date().toLocaleDateString() });
-         
-         board.sort((a, b) => b.score - a.score);
-         board = board.slice(0, 5);
-         localStorage.setItem('betting_battle_scores', JSON.stringify(board));
+         if (window.GameClient && window.GameClient.socket) {
+             window.GameClient.socket.emit('save_score', { name: name, score: score });
+         }
      }
 
      window.addEventListener('gameStateUpdate', (e) => {
@@ -134,8 +130,11 @@
          
          if (state.state === 'ENDGAME') {
              saveHighScore();
-             alert("Practice completed! Check your rank on the Leaderboard.");
-             window.location.href = '../../../index.html';
+             // Chờ 500ms để Server lưu điểm vào file json rồi mới chuyển trang
+             setTimeout(() => {
+                 alert("Practice completed! Check your rank on the Leaderboard.");
+                 window.location.href = '../../../index.html';
+             }, 500);
              return;
          }
 
@@ -171,11 +170,10 @@
              document.getElementById('submit-btn').style.visibility = 'visible';
              document.getElementById('bettingPhase').classList.add('hidden');
 
-             // UNLOCK LẠI FORM NẾU ĐÂY LÀ CÂU HỎI MỚI VÀ CHƯA TRẢ LỜI
              if (state.state === 'QUESTION' && teamInfo && !teamInfo.hasAnswered) {
                  if (document.getElementById('gf-input').disabled) {
                      document.getElementById('gf-input').disabled = false;
-                     document.getElementById('gf-input').value = ""; // Dọn sạch ô trống
+                     document.getElementById('gf-input').value = ""; 
                      document.getElementById('submit-btn').disabled = false;
                      document.getElementById('submit-btn').innerText = "Check Answer";
                  }

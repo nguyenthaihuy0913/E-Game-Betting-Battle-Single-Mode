@@ -1,4 +1,19 @@
 const Room = require('./Room');
+const fs = require('fs');
+const path = require('path');
+
+// Tạo đường dẫn tới file lưu bảng xếp hạng
+const leaderboardFile = path.join(__dirname, 'leaderboard.json');
+let globalLeaderboard = [];
+
+// Khởi động Server: Đọc dữ liệu điểm cũ (nếu có)
+if (fs.existsSync(leaderboardFile)) {
+    try {
+        globalLeaderboard = JSON.parse(fs.readFileSync(leaderboardFile));
+    } catch(e) {
+        console.error("Lỗi đọc file Leaderboard:", e);
+    }
+}
 
 class GameManager {
     constructor(io) {
@@ -10,26 +25,43 @@ class GameManager {
         this.io.on('connection', (socket) => {
             console.log(`[Socket] Connected: ${socket.id}`);
 
-            // --- TÍNH NĂNG MỚI: TẠO PHÒNG CÀY CUỐC SOLO ---
+            // --- TÍNH NĂNG MỚI: BẢNG XẾP HẠNG GLOBAL ---
+            // 1. Trả dữ liệu bảng điểm khi có người mới vào trang chủ
+            socket.on('get_leaderboard', (callback) => {
+                callback(globalLeaderboard);
+            });
+
+            // 2. Nhận điểm từ người chơi vừa làm bài xong
+            socket.on('save_score', (data) => {
+                globalLeaderboard.push({
+                    name: data.name,
+                    score: data.score,
+                    date: new Date().toLocaleDateString('vi-VN') // Lấy ngày giờ VN
+                });
+                
+                // Sắp xếp từ cao xuống thấp và chỉ lấy Top 5
+                globalLeaderboard.sort((a, b) => b.score - a.score);
+                globalLeaderboard = globalLeaderboard.slice(0, 5);
+                
+                // Lưu cứng vào file JSON để không bị mất khi rs Server
+                fs.writeFileSync(leaderboardFile, JSON.stringify(globalLeaderboard, null, 2));
+                
+                // Phát loa thông báo cho TẤT CẢ mọi người đang mở trang chủ cập nhật lại bảng
+                this.io.emit('leaderboard_updated', globalLeaderboard);
+            });
+            // -------------------------------------------
+
             socket.on('quick_practice', (data, callback) => {
                 const roomId = 'PRAC_' + Math.floor(Math.random() * 10000);
-                
-                // Server tự đóng vai trò Host (SERVER_BOT)
                 const newRoom = new Room(roomId, this.io, 'SERVER_BOT');
                 newRoom.mode = 'SOLO';
                 this.rooms.set(roomId, newRoom);
                 socket.join(roomId);
-                
-                // Đăng ký cho người chơi vào thẳng phòng ảo
                 newRoom.addPlayer(socket.id, data.playerId, data.playerName, '🐺');
-                
-                // Ép chia đội (1 người tự làm leader) và bắt đầu game ngay
                 newRoom.assignTeams();
-                
                 console.log(`[Room] Auto-Created Solo Match: ${roomId} for ${data.playerName}`);
                 callback({ success: true, roomId });
             });
-            // ---------------------------------------------
 
             socket.on('create_room', (data, callback) => {
                 const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
@@ -38,8 +70,6 @@ class GameManager {
                 const newRoom = new Room(roomId, this.io, socket.id);
                 this.rooms.set(roomId, newRoom);
                 socket.join(roomId);
-                
-                console.log(`[Room] Created: ${roomId} by Host ${socket.id}`);
                 callback({ success: true, roomId });
             });
             
@@ -78,32 +108,25 @@ class GameManager {
                 const room = Array.from(this.rooms.values()).find(r => 
                     Array.from(r.players.values()).some(p => p.socketId === socket.id)
                 );
-                
                 if (room) {
                     room.handlePlayerAction(socket.id, data.action, data.payload);
                 }
             });
 
             socket.on('disconnect', () => {
-                console.log(`[Socket] Disconnected: ${socket.id}`);
                 const roomArray = Array.from(this.rooms.values());
                 const playerRoom = roomArray.find(r => Array.from(r.players.values()).some(p => p.socketId === socket.id));
                 
                 if (playerRoom) {
                     playerRoom.removePlayer(socket.id);
-
-                    // --- TÍNH NĂNG MỚI: DỌN RÁC PHÒNG SOLO KHI KHÁCH THOÁT WEB ---
                     if (playerRoom.mode === 'SOLO') {
                         setTimeout(() => {
-                            // Kiểm tra lại xem có ai còn đang kết nối trong phòng này không
                             const stillHere = Array.from(playerRoom.players.values()).some(p => p.connected);
                             if (!stillHere) {
-                                console.log(`[Room] Xóa phòng Solo (khách đã thoát): ${playerRoom.id}`);
                                 this.rooms.delete(playerRoom.id);
                             }
-                        }, 5000); // Trì hoãn 5s đề phòng người chơi F5 tải lại trang
+                        }, 5000); 
                     }
-                    // -----------------------------------------------------------
                 }
 
                 this.rooms.forEach(room => {
@@ -111,7 +134,6 @@ class GameManager {
                         room.hostConnected = false;
                         setTimeout(() => {
                             if (!room.hostConnected) {
-                                console.log(`[Room] Destroyed (Host left): ${room.id}`);
                                 this.io.to(room.id).emit('room_closed');
                                 this.rooms.delete(room.id);
                             }
