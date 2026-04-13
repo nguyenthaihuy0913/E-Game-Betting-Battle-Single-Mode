@@ -7,13 +7,56 @@
   <title>Betting Battle · Solo Practice Mode</title>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./src/styles/main.css" />
+  
+  <style>
+    body {
+        /* ĐƯỜNG DẪN ẢNH NỀN CỦA BẠN: Sửa lại tên file ảnh cho đúng (vd: bg.jpg) */
+        background-image: url('./src/assets/fpt.png'); 
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        margin: 0;
+        min-height: 100vh;
+    }
+    
+    /* Phủ một lớp màng đen mỏng lên toàn bộ ảnh nền để làm dịu mắt và nổi bật nội dung */
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(0, 0, 0, 0.4); /* Tăng giảm 0.4 để chỉnh độ tối của màng phủ */
+        z-index: -1;
+    }
+
+    /* Hiệu ứng Glassmorphism (Kính mờ) cho Bảng điều khiển và Hero text */
+    .card.cj, .hero {
+        background: rgba(255, 255, 255, 0.9) !important; /* Màu trắng hơi trong suốt */
+        backdrop-filter: blur(12px); /* Làm mờ ảnh nền phía sau thẻ */
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        border-radius: 24px;
+    }
+    
+    .hero {
+        padding: 20px;
+        border-radius: 24px;
+        margin-bottom: 20px;
+    }
+    
+    .foot {
+        color: rgba(255, 255, 255, 0.8) !important;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+    }
+    
+    .rstrip {
+        display: none; /* Ẩn dải chữ bên phải để giao diện rộng và khoe được ảnh nền */
+    }
+  </style>
 </head>
 
 <body>
-  <canvas id="cv"></canvas>
-  <div class="grain"></div>
-  <div class="particles" id="pts"></div>
-
   <div class="page">  
 
     <div class="hero">
@@ -26,16 +69,10 @@
       </div>
       <div class="tsub">Summit 2 Edition · Train Your Brain · Outsmart the Game</div>
       <div class="pills">
-        <span class="pill pb">⚡ 30 Questions</span>
+        <span class="pill pb">⚡ 50 Questions</span>
         <span class="pill pg">🪙 50 pts Start</span>
         <span class="pill pm">✦ Auto-grading</span>
       </div>
-    </div>
-
-    <div class="rstrip">
-      <span class="rl">Rounds</span>
-      <span class="rt r1">① Round 1: Multiple Choice</span>
-      <span class="rt r2">② Round 2: Gap Fill</span>
     </div>
 
     <div class="main-panel">
@@ -105,7 +142,6 @@
         });
     }
 
-    // LOGIC RÚT DỮ LIỆU ĐIỂM SỐ TỪ MÁY VÀ HIỂN THỊ
     function displayLeaderboard() {
         const list = document.getElementById('board-list');
         const board = JSON.parse(localStorage.getItem('betting_battle_scores') || "[]");
@@ -132,7 +168,6 @@
         }).join('');
     }
 
-    // Gọi hàm hiển thị bảng điểm ngay khi trang vừa tải xong
     document.addEventListener('DOMContentLoaded', displayLeaderboard);
   </script>
 </body>

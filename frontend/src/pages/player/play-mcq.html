@@ -5,13 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>MCQ Test Interface - Practice Mode</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800;900&display=swap"
-    rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../styles/main.css">
   <link rel="stylesheet" href="./player-layout.css">
-  </head>
+</head>
 
 <body>
   <canvas id="cv"></canvas>
@@ -31,7 +28,7 @@
            <div id="unified-timer-fill" style="height: 100%; width: 100%; background: linear-gradient(90deg, #FCD34D, #F59E0B); transition: width 1s linear;"></div>
         </div>
 
-        <div class="betting-phase-overlay" id="bettingPhase">
+        <div class="betting-phase-overlay hidden" id="bettingPhase">
           <div style="font-size: 50px; margin-bottom: 10px;">💰</div>
           <h2 style="font-family: 'Fredoka One', cursive; font-size: 28px; color: var(--ink); margin-bottom: 10px;">Place Your Bet!</h2>
           <p style="color:var(--ink3); font-weight:700; margin-bottom:24px;">Lock in your bet before facing the question!</p>
@@ -56,9 +53,7 @@
         </div>
 
         <h2 class="q-text" id="q-text">Loading question...</h2>
-
         <div class="options-grid" id="options-grid"></div>
-
         <div class="feedback-msg" id="feedback-msg"></div>
 
         <div class="test-nav">
@@ -84,8 +79,6 @@
              if(window.GameClient.isLeader) {
                 document.getElementById('bettingPhase').classList.add('hidden');
                 if(window.playSuccess) window.playSuccess();
-             } else {
-                 toast("Only the Team Leader can lock the bet!");
              }
          } else {
              document.getElementById('bettingPhase').classList.add('hidden');
@@ -104,7 +97,6 @@
      window.addEventListener('gameStateUpdate', (e) => {
          const state = e.detail;
          
-         // Tự động nhảy sang trang Gap Fill khi hết Round 1
          if (state.round === 2) {
              window.location.href = './play-gap-fill.html';
              return; 
@@ -114,7 +106,6 @@
              window.loadQuestionFromState(state.currentQuestionIdx);
          }
          
-         // ĐẾM SỐ CÂU CHUẨN 30 CÂU
          const qCounter = document.getElementById('q-counter');
          if (qCounter && state.progressIdx !== undefined) {
              qCounter.innerText = `Q ${state.progressIdx + 1} / 30`; 
@@ -125,7 +116,10 @@
              document.getElementById('score').innerText = teamInfo.score;
          }
 
-         if(state.state === 'BETTING') {
+         // THÊM XỬ LÝ ẨN/HIỆN CHÍNH XÁC CHO MỌI STATE
+         if (state.state === 'ROUND_TRANSITION') {
+             document.getElementById('bettingPhase').classList.add('hidden');
+         } else if (state.state === 'BETTING') {
              document.getElementById('q-text').style.visibility = 'hidden';
              document.getElementById('options-grid').style.visibility = 'hidden';
 

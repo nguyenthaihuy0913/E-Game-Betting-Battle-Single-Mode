@@ -5,11 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Gap-Fill Test Interface - Practice Mode</title>
-  
   <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../styles/main.css">
   <link rel="stylesheet" href="./player-layout.css">
-  </head>
+</head>
 
 <body>
   <canvas id="cv"></canvas>
@@ -29,7 +28,7 @@
            <div id="unified-timer-fill" style="height: 100%; width: 100%; background: linear-gradient(90deg, #FCD34D, #F59E0B); transition: width 1s linear;"></div>
         </div>
 
-        <div class="betting-phase-overlay" id="bettingPhase">
+        <div class="betting-phase-overlay hidden" id="bettingPhase">
           <div style="font-size: 50px; margin-bottom: 10px;">💰</div>
           <h2 style="font-family: 'Fredoka One', cursive; font-size: 28px; color: var(--ink); margin-bottom: 10px;">Place Your Bet!</h2>
           <p style="color:var(--ink3); font-weight:700; margin-bottom:24px;">Lock in your bet before facing the question!</p>
@@ -86,8 +85,6 @@
                 document.getElementById('bettingPhase').classList.add('hidden');
                 if(window.playSuccess) window.playSuccess();
                 document.getElementById('gf-input').focus();
-             } else {
-                 toast("Only the Team Leader can lock the bet!");
              }
          } else {
              document.getElementById('bettingPhase').classList.add('hidden');
@@ -96,12 +93,21 @@
          }
      }
      
+     // FIX BUG 2: ĐÓNG BĂNG GIAO DIỆN VÀ HIỆN CHỮ "ĐANG CHẤM" LẬP TỨC
      const origSubmit = window.checkGapFill;
      window.checkGapFill = function() {
-         if (origSubmit) origSubmit();
+         try { if (origSubmit) origSubmit(); } catch(e) { console.error(e); }
+         
          if (window.GameClient) {
              const ansText = document.getElementById('gf-input').value.trim();
+             if (!ansText) return; // Chặn không cho nộp chuỗi rỗng
+             
              window.GameClient.submitAnswer(ansText);
+             
+             // Khoá ngay lập tức để người chơi biết hệ thống đã nhận lệnh
+             document.getElementById('gf-input').disabled = true;
+             document.getElementById('submit-btn').disabled = true;
+             document.getElementById('submit-btn').innerText = "⏳ Đang chấm...";
          }
      };
 
@@ -111,7 +117,6 @@
         }
      });
 
-     // HÀM LƯU ĐIỂM XẾP HẠNG VÀO MÁY
      function saveHighScore() {
          const name = sessionStorage.getItem('playerName') || "Anonymous";
          const score = parseInt(document.getElementById('score').innerText) || 0;
@@ -119,17 +124,14 @@
          let board = JSON.parse(localStorage.getItem('betting_battle_scores') || "[]");
          board.push({ name: name, score: score, date: new Date().toLocaleDateString() });
          
-         // Sắp xếp và lấy Top 5
          board.sort((a, b) => b.score - a.score);
          board = board.slice(0, 5);
-         
          localStorage.setItem('betting_battle_scores', JSON.stringify(board));
      }
 
      window.addEventListener('gameStateUpdate', (e) => {
          const state = e.detail;
          
-         // LOGIC KẾT THÚC GAME: LƯU ĐIỂM VÀ ĐÁ VỀ TRANG CHỦ
          if (state.state === 'ENDGAME') {
              saveHighScore();
              alert("Practice completed! Check your rank on the Leaderboard.");
@@ -141,7 +143,6 @@
              window.loadQuestionFromState(state.currentQuestionIdx);
          }
          
-         // ĐẾM SỐ CÂU CHUẨN 20 CÂU
          const qCounter = document.getElementById('q-counter');
          if (qCounter && state.progressIdx !== undefined) {
              qCounter.innerText = `Q ${state.progressIdx + 1} / 20`; 
@@ -152,7 +153,9 @@
              document.getElementById('score').innerText = teamInfo.score;
          }
 
-         if(state.state === 'BETTING') {
+         if (state.state === 'ROUND_TRANSITION') {
+             document.getElementById('bettingPhase').classList.add('hidden');
+         } else if (state.state === 'BETTING') {
              document.getElementById('q-text').style.visibility = 'hidden';
              document.getElementById('gf-input').style.visibility = 'hidden';
              document.getElementById('submit-btn').style.visibility = 'hidden';
@@ -167,6 +170,16 @@
              document.getElementById('gf-input').style.visibility = 'visible';
              document.getElementById('submit-btn').style.visibility = 'visible';
              document.getElementById('bettingPhase').classList.add('hidden');
+
+             // UNLOCK LẠI FORM NẾU ĐÂY LÀ CÂU HỎI MỚI VÀ CHƯA TRẢ LỜI
+             if (state.state === 'QUESTION' && teamInfo && !teamInfo.hasAnswered) {
+                 if (document.getElementById('gf-input').disabled) {
+                     document.getElementById('gf-input').disabled = false;
+                     document.getElementById('gf-input').value = ""; // Dọn sạch ô trống
+                     document.getElementById('submit-btn').disabled = false;
+                     document.getElementById('submit-btn').innerText = "Check Answer";
+                 }
+             }
          }
      });
 

@@ -2,759 +2,785 @@
   "multiple_choice": [
     {
       "id": 1,
-      "question": "I don't mind _____ late to finish the community service project.",
+      "question": "In Jason's story, what turns a moment of shared amusement into a moral failure?",
       "options": [
-        "A. him arrive",
-        "B. him arriving",
-        "C. his arriving",
-        "D. he arriving"
+        "A. The class laughs at Joey before Jason says anything.",
+        "B. Jason and Joey mock the artwork without realizing the artist is present, and the joking goes too far.",
+        "C. Mr. Rogg invites the class to criticize the drawing.",
+        "D. The girl leaves the room before anyone reacts."
       ],
       "correct_answer": "B",
-      "correct_answer_text": "B. him arriving"
+      "correct_answer_text": "B. Jason and Joey mock the artwork without realizing the artist is present, and the joking goes too far."
     },
     {
       "id": 2,
-      "question": "She admitted _____ a mistake in the report.",
+      "question": "When Dad initially replies, \"That's not a crime,\" he is temporarily treating Jason's reaction as",
       "options": [
-        "A. make",
-        "B. to make",
-        "C. making",
-        "D. made"
+        "A. a matter of taste rather than behavior.",
+        "B. a legal issue rather than a classroom issue.",
+        "C. an act of dishonesty rather than mockery.",
+        "D. a failure of responsibility rather than a private opinion."
       ],
-      "correct_answer": "C",
-      "correct_answer_text": "C. making"
+      "correct_answer": "A",
+      "correct_answer_text": "A. a matter of taste rather than behavior."
     },
     {
       "id": 3,
-      "question": "He denied _____ the blame for the accident.",
+      "question": "Which expression from the Spotlight conversation most clearly signals that a further and more damaging detail is still coming?",
       "options": [
-        "A. take",
-        "B. taking",
-        "C. to take",
-        "D. took"
+        "A. \"So what?\"",
+        "B. \"I couldn't help myself.\"",
+        "C. \"That's not the worst of it.\"",
+        "D. \"You're probably right.\""
       ],
-      "correct_answer": "B",
-      "correct_answer_text": "B. taking"
+      "correct_answer": "C",
+      "correct_answer_text": "C. \"That's not the worst of it.\""
     },
     {
       "id": 4,
-      "question": "They promised _____ their responsibilities seriously.",
+      "question": "In context, Jason's statement \"I could just kick myself\" conveys",
       "options": [
-        "A. take",
-        "B. taking",
-        "C. to take",
-        "D. taken"
+        "A. anger at Mr. Rogg for leaving the room.",
+        "B. a desire to punish Joey physically.",
+        "C. intense self-reproach.",
+        "D. fear of being suspended."
       ],
       "correct_answer": "C",
-      "correct_answer_text": "C. to take"
+      "correct_answer_text": "C. intense self-reproach."
     },
     {
       "id": 5,
-      "question": "Stop _____ excuses and take responsibility!",
+      "question": "Dad's advice is structured so that, after apologizing and owning up, Jason should additionally",
       "options": [
-        "A. make",
-        "B. making",
-        "C. to make",
-        "D. made"
+        "A. explain that Joey started the whole incident.",
+        "B. wait for the girl to speak first.",
+        "C. talk to Mr. Rogg afterward so he knows Jason did the right thing.",
+        "D. ask the class to apologize together."
       ],
-      "correct_answer": "B",
-      "correct_answer_text": "B. making"
+      "correct_answer": "C",
+      "correct_answer_text": "C. talk to Mr. Rogg afterward so he knows Jason did the right thing."
     },
     {
       "id": 6,
-      "question": "He avoided _____ the truth.",
+      "question": "Which general conclusion is most strongly supported by the article \"Telling the Truth? It's Not So Easy!\"?",
       "options": [
-        "A. tell",
-        "B. telling",
-        "C. to tell",
-        "D. told"
+        "A. Lying is statistically ordinary rather than exceptional in daily life.",
+        "B. Most lies are told only in professional settings.",
+        "C. Participants lied mainly to strangers rather than to familiar people.",
+        "D. White lies are presented as more harmful than direct insults."
       ],
-      "correct_answer": "B",
-      "correct_answer_text": "B. telling"
+      "correct_answer": "A",
+      "correct_answer_text": "A. Lying is statistically ordinary rather than exceptional in daily life."
     },
     {
       "id": 7,
-      "question": "She decided _____ the truth instead of lying.",
+      "question": "Why does the article single out store clerks, salespeople, politicians, and journalists?",
       "options": [
-        "A. tell",
-        "B. telling",
-        "C. to tell",
-        "D. told"
+        "A. They were the only professions represented in the study.",
+        "B. They are treated as morally worse than other workers.",
+        "C. They illustrate professions in which heavy social contact creates more opportunities to lie.",
+        "D. They are the only people who tell white lies."
       ],
       "correct_answer": "C",
-      "correct_answer_text": "C. to tell"
+      "correct_answer_text": "C. They illustrate professions in which heavy social contact creates more opportunities to lie."
     },
     {
       "id": 8,
-      "question": "He kept _____ promises to his team.",
+      "question": "Which claim would the article most clearly reject?",
       "options": [
-        "A. break",
-        "B. breaking",
-        "C. to break",
-        "D. broke"
+        "A. People sometimes lie to protect another person's feelings.",
+        "B. Some people are rewarded for lying in everyday situations.",
+        "C. Ordinary life includes many days on which no one tells even a single lie.",
+        "D. Frequent social interaction can increase opportunities for dishonesty."
       ],
-      "correct_answer": "B",
-      "correct_answer_text": "B. breaking"
+      "correct_answer": "C",
+      "correct_answer_text": "C. Ordinary life includes many days on which no one tells even a single lie."
     },
     {
       "id": 9,
-      "question": "She refused _____ responsibility for the error.",
+      "question": "Which clause on page 16 exemplifies possession rather than time or place?",
       "options": [
-        "A. take",
-        "B. taking",
-        "C. to take",
-        "D. took"
+        "A. where people are completely honest all the time",
+        "B. when some form of lying wasn't a part of everyday life",
+        "C. whose jobs require frequent social contact",
+        "D. with whom they interacted"
       ],
       "correct_answer": "C",
-      "correct_answer_text": "C. to take"
+      "correct_answer_text": "C. whose jobs require frequent social contact"
     },
     {
       "id": 10,
-      "question": "I suggest _____ the issue honestly.",
+      "question": "According to the caution box on page 17, which option is correct in formal English?",
       "options": [
-        "A. discuss",
-        "B. discussing",
-        "C. to discuss",
-        "D. discussed"
+        "A. the people with who they interacted",
+        "B. the question to that most people don't give a truthful answer",
+        "C. the people who they interacted with",
+        "D. the people with whom they interacted"
       ],
-      "correct_answer": "B",
-      "correct_answer_text": "B. discussing"
+      "correct_answer": "D",
+      "correct_answer_text": "D. the people with whom they interacted"
     },
-
     {
       "id": 11,
-      "question": "He apologized for _____ late to the meeting.",
+      "question": "Which single change converts the formal pattern on page 17 into the informal one without changing the core meaning?",
       "options": [
-        "A. arrive",
-        "B. arriving",
-        "C. to arrive",
-        "D. arrived"
+        "A. Move the preposition to the end of the clause.",
+        "B. Replace whom with whose.",
+        "C. Delete the relative pronoun entirely.",
+        "D. Add commas around the clause."
       ],
-      "correct_answer": "B",
-      "correct_answer_text": "B. arriving"
+      "correct_answer": "A",
+      "correct_answer_text": "A. Move the preposition to the end of the clause."
     },
     {
       "id": 12,
-      "question": "They agreed _____ the problem together.",
+      "question": "In \"The workplace is the place where people tend to tell the most lies,\" the clause introduced by \"where\" functions as",
       "options": [
-        "A. solve",
-        "B. solving",
-        "C. to solve",
-        "D. solved"
+        "A. a comment clause about the whole sentence.",
+        "B. a possession clause.",
+        "C. an identifying location clause.",
+        "D. an object clause after a preposition."
       ],
       "correct_answer": "C",
-      "correct_answer_text": "C. to solve"
+      "correct_answer_text": "C. an identifying location clause."
     },
     {
       "id": 13,
-      "question": "He risked _____ his reputation by lying.",
+      "question": "Which sentence contains a relative pronoun that must directly follow a preposition?",
       "options": [
-        "A. lose",
-        "B. losing",
-        "C. to lose",
-        "D. lost"
+        "A. The people who break their promises cannot be trusted.",
+        "B. The deal, about which Nora talked all the time, fell through.",
+        "C. There are moments when being honest can cause problems.",
+        "D. People whose lies are discovered lose trust."
       ],
       "correct_answer": "B",
-      "correct_answer_text": "B. losing"
+      "correct_answer_text": "B. The deal, about which Nora talked all the time, fell through."
     },
     {
       "id": 14,
-      "question": "She failed _____ her promise.",
+      "question": "Why is \"which\" correct in \"He broke his sister's camera, which made him feel terrible\"?",
       "options": [
-        "A. keep",
-        "B. keeping",
-        "C. to keep",
-        "D. kept"
+        "A. It identifies which camera he broke.",
+        "B. It replaces the noun \"sister.\"",
+        "C. It comments on the entire independent clause.",
+        "D. It marks possession."
       ],
       "correct_answer": "C",
-      "correct_answer_text": "C. to keep"
+      "correct_answer_text": "C. It comments on the entire independent clause."
     },
     {
       "id": 15,
-      "question": "They considered _____ the truth to avoid trouble.",
+      "question": "Which sentence from the unit best illustrates a non-restrictive clause about a person?",
       "options": [
-        "A. tell",
-        "B. telling",
-        "C. to tell",
-        "D. told"
+        "A. The friend whose phone I lost insisted I didn't need to replace it.",
+        "B. Lara, who works in my office, told me she broke the camera.",
+        "C. The hotel in the town where we stayed last weekend offered to give us a refund.",
+        "D. The person who borrowed my camera yesterday just told me she had broken it."
       ],
       "correct_answer": "B",
-      "correct_answer_text": "B. telling"
+      "correct_answer_text": "B. Lara, who works in my office, told me she broke the camera."
     },
     {
       "id": 16,
-      "question": "He pretended _____ innocent.",
+      "question": "The contrast between \"The laptop which I bought last week is great\" and \"The laptop, which I bought last week, is great\" is primarily a contrast between",
       "options": [
-        "A. be",
-        "B. being",
-        "C. to be",
-        "D. been"
+        "A. certainty and doubt.",
+        "B. essential identification and additional comment.",
+        "C. formal and informal register.",
+        "D. active and passive structure."
       ],
-      "correct_answer": "C",
-      "correct_answer_text": "C. to be"
+      "correct_answer": "B",
+      "correct_answer_text": "B. essential identification and additional comment."
     },
     {
       "id": 17,
-      "question": "She avoided _____ blamed for the mistake.",
+      "question": "Which sentence would violate the unit's rule for comment clauses?",
       "options": [
-        "A. be",
-        "B. being",
-        "C. to be",
-        "D. been"
+        "A. She blamed Paul for causing the accident, which was totally unfair.",
+        "B. I offered to pay for dinner, which was the right thing to do.",
+        "C. He broke his sister's camera, that made him feel terrible.",
+        "D. I had avoided taking responsibility, which was embarrassing."
       ],
-      "correct_answer": "B",
-      "correct_answer_text": "B. being"
+      "correct_answer": "C",
+      "correct_answer_text": "C. He broke his sister's camera, that made him feel terrible."
     },
     {
       "id": 18,
-      "question": "He promised _____ the truth next time.",
+      "question": "In the tablet dialogue, which line most clearly shows acceptance of responsibility rather than emotion alone?",
       "options": [
-        "A. tell",
-        "B. telling",
-        "C. to tell",
-        "D. told"
+        "A. \"I feel awful about it.\"",
+        "B. \"They said it wouldn't be worth it.\"",
+        "C. \"I'm going to get you a new one.\"",
+        "D. \"Please accept my apology.\""
       ],
       "correct_answer": "C",
-      "correct_answer_text": "C. to tell"
+      "correct_answer_text": "C. \"I'm going to get you a new one.\""
     },
     {
       "id": 19,
-      "question": "She admitted _____ the blame unfairly.",
+      "question": "Tim's response \"That's really not necessary\" functions mainly to",
       "options": [
-        "A. shift",
-        "B. shifting",
-        "C. to shift",
-        "D. shifted"
+        "A. deny that the damage happened.",
+        "B. soften the exchange by reducing the practical burden.",
+        "C. suggest the speaker should do nothing at all.",
+        "D. imply that the store can still repair the tablet."
       ],
       "correct_answer": "B",
-      "correct_answer_text": "B. shifting"
+      "correct_answer_text": "B. soften the exchange by reducing the practical burden."
     },
     {
       "id": 20,
-      "question": "He refused _____ an excuse.",
+      "question": "Which recycled expression on page 19 most strongly suggests failure to control a situation rather than direct dishonesty?",
       "options": [
-        "A. make",
-        "B. making",
-        "C. to make",
-        "D. made"
+        "A. tell a lie",
+        "B. make up an excuse",
+        "C. let things get out of hand",
+        "D. shift the blame to someone else"
       ],
       "correct_answer": "C",
-      "correct_answer_text": "C. to make"
+      "correct_answer_text": "C. let things get out of hand"
     },
-
     {
       "id": 21,
-      "question": "They avoided _____ responsibility.",
+      "question": "In \"The Development of Values,\" which influence is described as shaping values partly through observation rather than explicit instruction alone?",
       "options": [
-        "A. take",
-        "B. taking",
-        "C. to take",
-        "D. took"
+        "A. institutions",
+        "B. parents",
+        "C. life events",
+        "D. peers"
       ],
       "correct_answer": "B",
-      "correct_answer_text": "B. taking"
+      "correct_answer_text": "B. parents"
     },
     {
       "id": 22,
-      "question": "He decided _____ the truth immediately.",
+      "question": "Which section most explicitly connects value formation to the balance between conformity and individuality?",
       "options": [
-        "A. tell",
-        "B. telling",
-        "C. to tell",
-        "D. told"
+        "A. peers",
+        "B. life events",
+        "C. institutions",
+        "D. religion and culture"
       ],
-      "correct_answer": "C",
-      "correct_answer_text": "C. to tell"
+      "correct_answer": "D",
+      "correct_answer_text": "D. religion and culture"
     },
     {
       "id": 23,
-      "question": "She enjoys _____ others in need.",
+      "question": "The example of a school taking a public stand against bullying is used to illustrate how",
       "options": [
-        "A. help",
-        "B. helping",
-        "C. to help",
-        "D. helped"
+        "A. peers shame each other into obeying social norms.",
+        "B. institutions promote a code of ethics.",
+        "C. parents model moral behavior at home.",
+        "D. life events force people to reconsider priorities."
       ],
       "correct_answer": "B",
-      "correct_answer_text": "B. helping"
+      "correct_answer_text": "B. institutions promote a code of ethics."
     },
     {
       "id": 24,
-      "question": "He forgot _____ his promise.",
+      "question": "Which scenario is presented as an ethical dilemma because it pits two positive values against each other?",
       "options": [
-        "A. keep",
-        "B. keeping",
-        "C. to keep",
-        "D. kept"
+        "A. wanting to gain fame and money",
+        "B. choosing between truthfulness and protecting a close friend",
+        "C. deciding whether to change jobs",
+        "D. deciding whether to disagree with a teacher"
       ],
-      "correct_answer": "C",
-      "correct_answer_text": "C. to keep"
+      "correct_answer": "B",
+      "correct_answer_text": "B. choosing between truthfulness and protecting a close friend"
     },
     {
       "id": 25,
-      "question": "She regrets _____ a lie.",
+      "question": "In the classification exercise on page 21, why does \"celebrities\" not fit with \"peers / acquaintances / colleagues\"?",
       "options": [
-        "A. tell",
-        "B. telling",
-        "C. to tell",
-        "D. told"
+        "A. It refers mainly to people known through public awareness rather than everyday direct contact.",
+        "B. It is singular while the others are plural.",
+        "C. It describes a moral quality rather than a social category.",
+        "D. It applies only to childhood relationships."
       ],
-      "correct_answer": "B",
-      "correct_answer_text": "B. telling"
+      "correct_answer": "A",
+      "correct_answer_text": "A. It refers mainly to people known through public awareness rather than everyday direct contact."
     },
     {
       "id": 26,
-      "question": "He admitted _____ the mistake was his fault.",
+      "question": "Which quotation on page 21 most directly supports religion as a source of values?",
       "options": [
-        "A. be",
-        "B. being",
-        "C. to be",
-        "D. been"
+        "A. \"They taught me to work hard.\"",
+        "B. \"Those are the guidelines that help me remember the difference between right and wrong.\"",
+        "C. \"Children see everything.\"",
+        "D. \"A sudden financial loss may force us to re-examine what is important to us.\""
       ],
       "correct_answer": "B",
-      "correct_answer_text": "B. being"
+      "correct_answer_text": "B. \"Those are the guidelines that help me remember the difference between right and wrong.\""
     },
     {
       "id": 27,
-      "question": "She plans _____ her responsibilities better.",
+      "question": "Which definition in the philanthropy section depends least on wealth and most on effort toward social or political change?",
       "options": [
-        "A. manage",
-        "B. managing",
-        "C. to manage",
-        "D. managed"
+        "A. donor",
+        "B. philanthropist",
+        "C. activist",
+        "D. humanitarian"
       ],
       "correct_answer": "C",
-      "correct_answer_text": "C. to manage"
+      "correct_answer_text": "C. activist"
     },
     {
       "id": 28,
-      "question": "They avoided _____ the truth to their boss.",
+      "question": "Which distinction is most faithful to the textbook definitions?",
       "options": [
-        "A. tell",
-        "B. telling",
-        "C. to tell",
-        "D. told"
+        "A. A donor must be famous, whereas a philanthropist need not be.",
+        "B. A philanthropist gives only money, whereas a humanitarian gives only time.",
+        "C. A donor is any giver to a cause, whereas a philanthropist is described as wealthy and significant in scale.",
+        "D. An activist and a humanitarian are defined in exactly the same way."
       ],
-      "correct_answer": "B",
-      "correct_answer_text": "B. telling"
+      "correct_answer": "C",
+      "correct_answer_text": "C. A donor is any giver to a cause, whereas a philanthropist is described as wealthy and significant in scale."
     },
     {
       "id": 29,
-      "question": "He agreed _____ responsibility for the failure.",
+      "question": "Which biography centers on opposition to nuclear weapons and nuclear power?",
       "options": [
-        "A. take",
-        "B. taking",
-        "C. to take",
-        "D. took"
+        "A. Graca Machel",
+        "B. Li Ka-shing",
+        "C. Helen Caldicott",
+        "D. Bono"
       ],
       "correct_answer": "C",
-      "correct_answer_text": "C. to take"
+      "correct_answer_text": "C. Helen Caldicott"
     },
     {
       "id": 30,
-      "question": "She denied _____ any involvement in the problem.",
+      "question": "Which issue appears as a labeled concern in the page 22 collage?",
       "options": [
-        "A. have",
-        "B. having",
-        "C. to have",
-        "D. had"
+        "A. reforming tax policy",
+        "B. improving literacy",
+        "C. urban traffic safety",
+        "D. food inflation"
       ],
       "correct_answer": "B",
-      "correct_answer_text": "B. having"
+      "correct_answer_text": "B. improving literacy"
     },
     {
       "id": 31,
-      "question": "He promised _____ more careful in the future.",
+      "question": "On page 24, which sentence contains a restrictive clause about a thing rather than a person?",
       "options": [
-        "A. be",
-        "B. being",
-        "C. to be",
-        "D. been"
+        "A. Lara, who works in my office, told me she broke the camera.",
+        "B. The friend whose phone I lost insisted I didn't need to replace it.",
+        "C. She replaced the camera lens that she had broken the day before.",
+        "D. My laptop, which was always crashing when I really needed it, finally died."
       ],
       "correct_answer": "C",
-      "correct_answer_text": "C. to be"
+      "correct_answer_text": "C. She replaced the camera lens that she had broken the day before."
     },
     {
       "id": 32,
-      "question": "She suggested _____ the issue calmly.",
+      "question": "Which sentence from page 24 is explicitly given as a non-restrictive clause about place?",
       "options": [
-        "A. discuss",
-        "B. discussing",
-        "C. to discuss",
-        "D. discussed"
+        "A. The hotel in the town where we stayed last weekend offered to give us a refund.",
+        "B. The Alpes Hotel, where we always get a room in July, offered to give us a refund.",
+        "C. The person who borrowed my camera yesterday just told me she had broken it.",
+        "D. She replaced the camera lens that she had broken the day before."
       ],
       "correct_answer": "B",
-      "correct_answer_text": "B. discussing"
+      "correct_answer_text": "B. The Alpes Hotel, where we always get a room in July, offered to give us a refund."
     },
     {
       "id": 33,
-      "question": "He failed _____ his duties properly.",
+      "question": "The punctuation warning on page 24 is meant to show that commas can change",
       "options": [
-        "A. perform",
-        "B. performing",
-        "C. to perform",
-        "D. performed"
+        "A. tense and aspect.",
+        "B. whether a clause identifies the noun or merely comments on it.",
+        "C. the pronoun from singular to plural.",
+        "D. direct speech into reported speech."
       ],
-      "correct_answer": "C",
-      "correct_answer_text": "C. to perform"
+      "correct_answer": "B",
+      "correct_answer_text": "B. whether a clause identifies the noun or merely comments on it."
     },
     {
       "id": 34,
-      "question": "They considered _____ an excuse.",
+      "question": "What broader writing lesson is reinforced by the instruction to add three commas and delete three commas in the essay task?",
       "options": [
-        "A. make",
-        "B. making",
-        "C. to make",
-        "D. made"
+        "A. Every adjective clause should be enclosed in commas.",
+        "B. Punctuation must reflect whether information is essential or additional.",
+        "C. Relative pronouns should normally be omitted in formal writing.",
+        "D. Non-restrictive clauses should always begin with that."
       ],
       "correct_answer": "B",
-      "correct_answer_text": "B. making"
+      "correct_answer_text": "B. Punctuation must reflect whether information is essential or additional."
     },
     {
       "id": 35,
-      "question": "He avoided _____ criticized by others.",
+      "question": "Which sentence in Exercise C on page 24 is punctuated incorrectly because the final clause comments on the whole idea rather than identifying \"Megan\"?",
       "options": [
-        "A. be",
-        "B. being",
-        "C. to be",
-        "D. been"
+        "A. His grandparents are the ones who taught him about right and wrong.",
+        "B. My cousin who was always truthful about everything told my aunt she was wrong.",
+        "C. I told a lie that I have regretted for more than ten years.",
+        "D. We found out that Megan was going to join us which was great."
       ],
-      "correct_answer": "B",
-      "correct_answer_text": "B. being"
+      "correct_answer": "D",
+      "correct_answer_text": "D. We found out that Megan was going to join us which was great."
     },
     {
       "id": 36,
-      "question": "She decided _____ the truth despite the risk.",
+      "question": "In Review B, sentence 1 distinguishes the mistake itself from Matt's response to it by showing that he tries to",
       "options": [
-        "A. tell",
-        "B. telling",
-        "C. to tell",
-        "D. told"
+        "A. take responsibility.",
+        "B. admit making a mistake.",
+        "C. shift the blame.",
+        "D. tell the truth."
       ],
       "correct_answer": "C",
-      "correct_answer_text": "C. to tell"
+      "correct_answer_text": "C. shift the blame."
     },
     {
       "id": 37,
-      "question": "He admitted _____ others unfairly.",
+      "question": "In Review B, sentence 3 most sharply separates silent repair from open confession; Alice wanted to take responsibility, but she did not want to",
       "options": [
-        "A. blame",
-        "B. blaming",
-        "C. to blame",
-        "D. blamed"
+        "A. make up an excuse.",
+        "B. shift the blame.",
+        "C. admit making a mistake.",
+        "D. tell the truth."
       ],
-      "correct_answer": "B",
-      "correct_answer_text": "B. blaming"
+      "correct_answer": "C",
+      "correct_answer_text": "C. admit making a mistake."
     },
     {
       "id": 38,
-      "question": "They refused _____ an apology.",
+      "question": "Review B, sentence 5 implies that the speaker values tact over blunt honesty in a case involving",
       "options": [
-        "A. accept",
-        "B. accepting",
-        "C. to accept",
-        "D. accepted"
+        "A. a report that was not prepared on time.",
+        "B. a grandmother's dinner that tasted terrible.",
+        "C. an umbrella left on a train.",
+        "D. a missing sales file."
       ],
-      "correct_answer": "C",
-      "correct_answer_text": "C. to accept"
+      "correct_answer": "B",
+      "correct_answer_text": "B. a grandmother's dinner that tasted terrible."
     },
     {
       "id": 39,
-      "question": "She enjoys _____ honest conversations.",
+      "question": "Which blank in Review C can only be completed by \"where\" rather than \"when,\" \"which,\" or \"who\"?",
       "options": [
-        "A. have",
-        "B. having",
-        "C. to have",
-        "D. had"
+        "A. the time ___ she asked me to help",
+        "B. situations in ___ you simply have to meet your deadlines",
+        "C. the office is a place ___ \"Actions speak louder than words\"",
+        "D. a report ___ was due the next day"
       ],
-      "correct_answer": "B",
-      "correct_answer_text": "B. having"
+      "correct_answer": "C",
+      "correct_answer_text": "C. the office is a place ___ \"Actions speak louder than words\""
     },
     {
       "id": 40,
-      "question": "He forgot _____ his responsibilities.",
+      "question": "In Review C, which pair of blanks requires preposition-plus-relative-pronoun structures referring respectively to a person and to a topic?",
       "options": [
-        "A. complete",
-        "B. completing",
-        "C. to complete",
-        "D. completed"
+        "A. (1) and (6)",
+        "B. (2) and (7)",
+        "C. (3) and (8)",
+        "D. (4) and (9)"
       ],
-      "correct_answer": "C",
-      "correct_answer_text": "C. to complete"
+      "correct_answer": "A",
+      "correct_answer_text": "A. (1) and (6)"
     },
     {
       "id": 41,
-      "question": "She regrets _____ the truth earlier.",
+      "question": "Which survey item on page 14 most directly tests honesty in a situation where confession is unlikely to be forced by witnesses?",
       "options": [
-        "A. not tell",
-        "B. not telling",
-        "C. to not tell",
-        "D. not told"
+        "A. you were late for an appointment",
+        "B. you forgot a friend's birthday",
+        "C. you damaged someone's car while parking, but no one saw you",
+        "D. you were caught telling a lie"
       ],
-      "correct_answer": "B",
-      "correct_answer_text": "B. not telling"
+      "correct_answer": "C",
+      "correct_answer_text": "C. you damaged someone's car while parking, but no one saw you"
     },
     {
       "id": 42,
-      "question": "They kept _____ excuses instead of acting.",
+      "question": "Which preview response option reassigns responsibility instead of inventing a justification or admitting fault?",
       "options": [
-        "A. make",
-        "B. making",
-        "C. to make",
-        "D. made"
+        "A. admit making a mistake",
+        "B. shift the blame to someone or something else",
+        "C. keep a promise",
+        "D. tell the truth"
       ],
       "correct_answer": "B",
-      "correct_answer_text": "B. making"
+      "correct_answer_text": "B. shift the blame to someone or something else"
     },
     {
       "id": 43,
-      "question": "He risked _____ his job by lying.",
+      "question": "Which pair of expressions in the preview vocabulary box stands in the clearest direct opposition within the theme of responsibility?",
       "options": [
-        "A. lose",
-        "B. losing",
-        "C. to lose",
-        "D. lost"
+        "A. keep a promise / tell the truth",
+        "B. shift the blame / admit making a mistake",
+        "C. make up an excuse / keep a promise",
+        "D. tell a lie / admit making a mistake"
       ],
       "correct_answer": "B",
-      "correct_answer_text": "B. losing"
+      "correct_answer_text": "B. shift the blame / admit making a mistake"
     },
     {
       "id": 44,
-      "question": "She agreed _____ more responsible.",
+      "question": "Which statement best integrates the unit's moral content with its grammar focus?",
       "options": [
-        "A. become",
-        "B. becoming",
-        "C. to become",
-        "D. became"
+        "A. Grammar is treated mainly as an isolated form exercise unrelated to meaning.",
+        "B. Vocabulary sections are kept completely separate from the communication goals.",
+        "C. Grammar is repeatedly used to express evaluation, consequence, explanation, and responsibility.",
+        "D. The unit avoids using grammar to discuss ethics or social behavior."
       ],
       "correct_answer": "C",
-      "correct_answer_text": "C. to become"
+      "correct_answer_text": "C. Grammar is repeatedly used to express evaluation, consequence, explanation, and responsibility."
     },
     {
       "id": 45,
-      "question": "He pretended _____ nothing happened.",
+      "question": "Which page asks learners not only to discuss consequences of lying but also to sort situations into those in which lies should or should not be told?",
       "options": [
-        "A. know",
-        "B. knowing",
-        "C. to know",
-        "D. knew"
+        "A. page 15",
+        "B. page 17",
+        "C. page 21",
+        "D. page 23"
       ],
-      "correct_answer": "C",
-      "correct_answer_text": "C. to know"
+      "correct_answer": "B",
+      "correct_answer_text": "B. page 17"
     },
     {
       "id": 46,
-      "question": "They avoided _____ the consequences.",
+      "question": "Which expression from the unit is best classified as a comment clause rather than an identifying adjective clause?",
       "options": [
-        "A. face",
-        "B. facing",
-        "C. to face",
-        "D. faced"
+        "A. who borrowed my camera yesterday",
+        "B. that she had broken the day before",
+        "C. where we stayed last weekend",
+        "D. which was embarrassing"
       ],
-      "correct_answer": "B",
-      "correct_answer_text": "B. facing"
+      "correct_answer": "D",
+      "correct_answer_text": "D. which was embarrassing"
     },
     {
       "id": 47,
-      "question": "She promised _____ her mistake.",
+      "question": "Which sentence best preserves the unit's intended informal pattern?",
       "options": [
-        "A. fix",
-        "B. fixing",
-        "C. to fix",
-        "D. fixed"
+        "A. The participants lied to many of the people with whom they interacted.",
+        "B. The participants lied to many of the people who they interacted with.",
+        "C. The participants lied to many of the people whom they interacted.",
+        "D. The participants lied to many of the people with who they interacted."
       ],
-      "correct_answer": "C",
-      "correct_answer_text": "C. to fix"
+      "correct_answer": "B",
+      "correct_answer_text": "B. The participants lied to many of the people who they interacted with."
     },
     {
       "id": 48,
-      "question": "He denied _____ the truth.",
+      "question": "Which detail in the values reading most clearly shows that values are cumulative rather than single-sourced?",
       "options": [
-        "A. hide",
-        "B. hiding",
-        "C. to hide",
-        "D. hid"
+        "A. Parents correct children when they make mistakes.",
+        "B. Some companies promote mission statements.",
+        "C. Values come from a variety of sources and combine to shape later choices.",
+        "D. Peers influence how we categorize other people."
       ],
-      "correct_answer": "B",
-      "correct_answer_text": "B. hiding"
+      "correct_answer": "C",
+      "correct_answer_text": "C. Values come from a variety of sources and combine to shape later choices."
     },
     {
       "id": 49,
-      "question": "She suggested _____ responsibility immediately.",
+      "question": "Which sentence from the writing page would lose its intended meaning if the commas were removed?",
       "options": [
-        "A. take",
-        "B. taking",
-        "C. to take",
-        "D. took"
+        "A. Lara, who works in my office, told me she broke the camera that she had borrowed.",
+        "B. The person who borrowed my camera yesterday just told me she had broken it.",
+        "C. She replaced the camera lens that she had broken the day before.",
+        "D. The friend whose phone I lost insisted I didn't need to replace it."
       ],
-      "correct_answer": "B",
-      "correct_answer_text": "B. taking"
+      "correct_answer": "A",
+      "correct_answer_text": "A. Lara, who works in my office, told me she broke the camera that she had borrowed."
     },
     {
       "id": 50,
-      "question": "He decided _____ the problem honestly.",
+      "question": "Across the unit as a whole, which response pattern is most consistently treated as the preferable one after wrongdoing?",
       "options": [
-        "A. face",
-        "B. facing",
-        "C. to face",
-        "D. faced"
+        "A. conceal the act, then quietly repair the result",
+        "B. explain the circumstances and wait for others to decide",
+        "C. acknowledge the wrongdoing, accept responsibility, and try to make amends",
+        "D. deny bad intent and focus on the consequences for yourself"
       ],
       "correct_answer": "C",
-      "correct_answer_text": "C. to face"
+      "correct_answer_text": "C. acknowledge the wrongdoing, accept responsibility, and try to make amends"
     }
   ],
   "gap_fill": [
     {
       "id": 1,
-      "question": "Even when there was clear evidence, he refused to ____________________ (take / make / accept) responsibility for what had happened.",
-      "correct_answer": "take"
+      "question": "Jason admitted that the whole incident was his fault.\nJason admitted that he ______ the whole incident.",
+      "word_given": "BLAME",
+      "correct_answer": "was to blame for"
     },
     {
       "id": 2,
-      "question": "After hours of questioning, she finally admitted ____________________ (lie / lying / to lie) about the incident.",
-      "correct_answer": "lying"
+      "question": "While Mr. Rogg was out of the room, Joey started mocking the drawing.\nWhile Mr. Rogg was out of the room, Joey started ______ the drawing.",
+      "word_given": "FUN",
+      "correct_answer": "making fun of"
     },
     {
       "id": 3,
-      "question": "Instead of fixing the problem, he kept ____________________ (make / making / to make) excuses to avoid punishment.",
-      "correct_answer": "making"
+      "question": "Jason said he was unable to stop himself once everyone started laughing.\nJason said he ______ once everyone started laughing.",
+      "word_given": "HELP",
+      "correct_answer": "couldn't help himself"
     },
     {
       "id": 4,
-      "question": "You should consider ____________________ (tell / telling / to tell) the truth before things get worse.",
-      "correct_answer": "telling"
+      "question": "Jason and Joey let the joke go too far.\nJason and Joey ______ and let the joke go too far.",
+      "word_given": "AWAY",
+      "correct_answer": "got carried away"
     },
     {
       "id": 5,
-      "question": "She denied ____________________ (be / being / to be) involved, even though everyone suspected her.",
-      "correct_answer": "being"
+      "question": "Dad said Jason needed to accept responsibility because the situation had become uncontrolled.\nDad said Jason needed to accept responsibility for letting things ______.",
+      "word_given": "HAND",
+      "correct_answer": "get out of hand"
     },
     {
       "id": 6,
-      "question": "He promised ____________________ (fix / fixing / to fix) the mistake as soon as possible.",
-      "correct_answer": "to fix"
+      "question": "Dad told Jason to admit honestly what he had done.\nDad told Jason to ______ what he had done.",
+      "word_given": "OWN",
+      "correct_answer": "own up to"
     },
     {
       "id": 7,
-      "question": "They avoided ____________________ (talk / talking / to talk) about the issue during the meeting.",
-      "correct_answer": "talking"
+      "question": "Dad believed Jason ought to apologize to the girl.\nDad believed Jason ______ the girl.",
+      "word_given": "APOLOGY",
+      "correct_answer": "owed an apology to"
     },
     {
       "id": 8,
-      "question": "She regrets ____________________ (not tell / not telling / to not tell) the truth earlier.",
-      "correct_answer": "not telling"
+      "question": "Jane never takes responsibility when she does something wrong.\nJane refuses ______ when she does something wrong.",
+      "word_given": "ADMIT",
+      "correct_answer": "to admit making a mistake"
     },
     {
       "id": 9,
-      "question": "He failed ____________________ (complete / completing / to complete) the task on time despite multiple reminders.",
-      "correct_answer": "to complete"
+      "question": "The researchers found that every participant told one or more lies each day.\nThe researchers found that there was no day on which a participant failed to tell ______ lie.",
+      "word_given": "LEAST",
+      "correct_answer": "at least one"
     },
     {
       "id": 10,
-      "question": "They suggested ____________________ (discuss / discussing / to discuss) the problem in a more constructive way.",
-      "correct_answer": "discussing"
+      "question": "The article suggests that honesty is not always rewarded in everyday life.\nThe article suggests that people are not always rewarded ______.",
+      "word_given": "TRUTH",
+      "correct_answer": "for telling the truth"
     },
-
     {
       "id": 11,
-      "question": "Instead of admitting his mistake, he tried to ____________________ (shift / shifting / to shift) the blame onto others.",
-      "correct_answer": "shift"
+      "question": "Some lies are told to protect the feelings of the people with whom we communicate socially.\nSome lies are told to protect the feelings of the people ______.",
+      "word_given": "INTERACT",
+      "correct_answer": "with whom we interact"
     },
     {
       "id": 12,
-      "question": "She decided ____________________ (face / facing / to face) the consequences of her actions.",
-      "correct_answer": "to face"
+      "question": "The article says that people in highly social professions have the greatest opportunity to lie.\nAccording to the article, people ______ frequent social contact have the greatest opportunity to lie.",
+      "word_given": "WHOSE",
+      "correct_answer": "whose jobs require"
     },
     {
       "id": 13,
-      "question": "He risked ____________________ (lose / losing / to lose) his job by ignoring the rules.",
-      "correct_answer": "losing"
+      "question": "In formal English, the preposition comes before the relative pronoun when referring to people.\nIn formal English, \"the people who they interacted with\" becomes \"the people ______ interacted.\"",
+      "word_given": "WHOM",
+      "correct_answer": "with whom they"
     },
     {
       "id": 14,
-      "question": "They agreed ____________________ (take / taking / to take) full responsibility for the project failure.",
-      "correct_answer": "to take"
+      "question": "In formal English, the preposition also comes before the relative pronoun when referring to things.\nIn formal English, \"the question which most people don't give a truthful answer to\" becomes \"the question ______ most people don't give a truthful answer.\"",
+      "word_given": "WHICH",
+      "correct_answer": "to which"
     },
     {
       "id": 15,
-      "question": "She avoided ____________________ (answer / answering / to answer) the difficult questions.",
-      "correct_answer": "answering"
+      "question": "I lost my friend's phone, but she insisted that I did not have to replace it.\nThe friend ______ insisted I didn't need to replace it.",
+      "word_given": "PHONE",
+      "correct_answer": "whose phone I lost"
     },
     {
       "id": 16,
-      "question": "He pretended ____________________ (know / knowing / to know) nothing about the situation.",
-      "correct_answer": "to know"
+      "question": "The hotel in the town where we spent last weekend offered us a refund.\nThe hotel in the town ______ last weekend offered us a refund.",
+      "word_given": "STAYED",
+      "correct_answer": "where we stayed"
     },
     {
       "id": 17,
-      "question": "You should stop ____________________ (blame / blaming / to blame) others for your own mistakes.",
-      "correct_answer": "blaming"
+      "question": "The person told me yesterday that she had broken the camera after borrowing it.\nThe person ______ just told me she had broken it.",
+      "word_given": "BORROWED",
+      "correct_answer": "who borrowed my camera yesterday"
     },
     {
       "id": 18,
-      "question": "She enjoys ____________________ (have / having / to have) honest and open conversations.",
-      "correct_answer": "having"
+      "question": "My laptop finally died, and it had always been unreliable at the worst possible times.\nMy laptop, ______, finally died.",
+      "word_given": "CRASHING",
+      "correct_answer": "which was always crashing"
     },
     {
       "id": 19,
-      "question": "He forgot ____________________ (send / sending / to send) the email, which caused a delay.",
-      "correct_answer": "to send"
+      "question": "He blamed Paul for causing the accident, and that was totally unjust.\nHe blamed Paul for causing the accident, ______.",
+      "word_given": "UNFAIR",
+      "correct_answer": "which was totally unfair"
     },
     {
       "id": 20,
-      "question": "They considered ____________________ (report / reporting / to report) the issue to the manager.",
-      "correct_answer": "reporting"
+      "question": "Formal English allows the preposition to come before the relative pronoun in clauses about things.\nIn formal style, \"the deal that Nora talked about\" becomes \"the deal ______.\"",
+      "word_given": "TALKED",
+      "correct_answer": "about which Nora talked"
     },
-
     {
       "id": 21,
-      "question": "She apologized for ____________________ (be / being / to be) late to the important meeting.",
-      "correct_answer": "being"
+      "question": "She had been working on the report for an entire month before the deal fell through.\nThe report ______ for an entire month was needed for an important client.",
+      "word_given": "WORKING",
+      "correct_answer": "she had been working on"
     },
     {
       "id": 22,
-      "question": "He refused ____________________ (accept / accepting / to accept) any criticism from his team.",
-      "correct_answer": "to accept"
+      "question": "The speaker said she felt terrible after breaking the tablet.\nThe speaker said she ______ breaking the tablet.",
+      "word_given": "AWFUL",
+      "correct_answer": "felt awful about"
     },
     {
       "id": 23,
-      "question": "They kept ____________________ (delay / delaying / to delay) the decision without giving any clear reason.",
-      "correct_answer": "delaying"
+      "question": "Tim said replacing the tablet was unnecessary because he had already planned to buy a new one.\nTim said replacing the tablet was ______ because he had already planned to buy a new one.",
+      "word_given": "NECESSARY",
+      "correct_answer": "really not necessary"
     },
     {
       "id": 24,
-      "question": "She admitted ____________________ (shift / shifting / to shift) the blame to avoid punishment.",
-      "correct_answer": "shifting"
+      "question": "The reading stresses that values do not develop from a single influence.\nThe reading stresses that values originate from ______.",
+      "word_given": "SOURCES",
+      "correct_answer": "a variety of sources"
     },
     {
       "id": 25,
-      "question": "He planned ____________________ (improve / improving / to improve) his behavior after the incident.",
-      "correct_answer": "to improve"
+      "question": "The text says children often learn values by watching how their parents behave toward each other.\nThe text says children often acquire values ______ their parents relate to each other.",
+      "word_given": "OBSERVING",
+      "correct_answer": "by observing how"
     },
     {
       "id": 26,
-      "question": "They denied ____________________ (break / breaking / to break) the rules, despite strong evidence.",
-      "correct_answer": "breaking"
+      "question": "A sudden financial loss may force us to reconsider what matters most to us.\nA sudden financial loss may force us to rethink ______ to us.",
+      "word_given": "IMPORTANT",
+      "correct_answer": "what is important"
     },
     {
       "id": 27,
-      "question": "She promised ____________________ (be / being / to be) more responsible in the future.",
-      "correct_answer": "to be"
+      "question": "In ethical dilemmas, people may have to choose one value instead of another.\nIn ethical dilemmas, people may have to choose ______ values.",
+      "word_given": "BETWEEN",
+      "correct_answer": "between two opposing"
     },
     {
       "id": 28,
-      "question": "He avoided ____________________ (face / facing / to face) the consequences of his actions.",
-      "correct_answer": "facing"
+      "question": "Religion can make it easier to distinguish right from wrong because it offers clear rules for living.\nReligion can make it easier to distinguish right from wrong by providing ______.",
+      "word_given": "GUIDELINES",
+      "correct_answer": "clear guidelines to live by"
     },
     {
       "id": 29,
-      "question": "You should try ____________________ (solve / solving / to solve) the problem instead of complaining.",
-      "correct_answer": "to solve"
+      "question": "In some cultures, people attach more importance to social rules than to individual choice.\nIn some cultures, people attach more importance to ______ than to individual choice.",
+      "word_given": "EXPECTATIONS",
+      "correct_answer": "conforming to society's expectations"
     },
     {
       "id": 30,
-      "question": "She finally agreed ____________________ (tell / telling / to tell) the truth after a long silence.",
-      "correct_answer": "to tell"
+      "question": "A philanthropist may support a cause not only with money, but also with time or reputation.\nA philanthropist may make a ______.",
+      "word_given": "CONTRIBUTION",
+      "correct_answer": "significant contribution to a cause"
     }
   ]
 }
